@@ -27,7 +27,7 @@
   "steps":[{"title":"test","desc":"testdesc","status":"PASS"},{"title":"test1","desc":"testdesc1","status":"FAIL"},{"title":"test2","desc":"testdesc2","status":"EXE"}],
 
 
-  "s_run_id": "testsuiteid"
+  "s_run_id": "4d767509-f3b0-4fb6-a59d-85bfc384188b"
 
 
 

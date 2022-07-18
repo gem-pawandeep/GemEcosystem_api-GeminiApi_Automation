@@ -859,7 +859,48 @@
     "inputData" : {
       "id": 1234
     }
+  },"Updatesuite_auth_not_given":
+{
+  "runFlag": "Y",
+  "category": "test",
+  "scenarioID" : "V2S001",
+  "inputData" : {
+    "id": 1234
   }
+},"Create_new_record_for_test_case_auth_not_given":
+{
+  "runFlag": "Y",
+  "category": "test",
+  "scenarioID" : "V2S001",
+  "inputData" : {
+    "id": 1234
+  }
+},"Create_new_record_for_test_case_Wrong_auth":
+{
+  "runFlag": "Y",
+  "category": "test",
+  "scenarioID" : "V2S001",
+  "inputData" : {
+    "id": 1234
+  }
+},"Update_testcase_data_auth_not_given":
+{
+  "runFlag": "Y",
+  "category": "test",
+  "scenarioID" : "V2S001",
+  "inputData" : {
+    "id": 1234
+  }
+},"Update_testcase_data_wrong_auth":
+{
+  "runFlag": "Y",
+  "category": "test",
+  "scenarioID" : "V2S001",
+  "inputData" : {
+    "id": 1234
+  }
+}
+
 
 
 
