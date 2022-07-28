@@ -9,6 +9,7 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 
 import com.gemini.dataProvider.QuanticDataProvider;
+import com.gemini.generic.QuanticGlobalVar;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -689,6 +690,12 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Put Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_1_sampleJson").getAsJsonObject();
+
+            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            {
+                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+            }
+
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
@@ -749,6 +756,15 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Put Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
+
+
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c14");
+           }
+
+
+
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
@@ -781,7 +797,7 @@ public class posttoken extends QuanticAPIBase {
         } else if (status == 200) {
 
 
-            GemTestReporter.addTestStep("Status Verification", "Expected Status : 200", STATUS.FAIL);
+            GemTestReporter.addTestStep("Status Verification", "Expected Status : 400", STATUS.FAIL);
             JsonObject body = res.get("responseBody").getAsJsonObject();
             GemTestReporter.addTestStep("Response Body", String.valueOf(body), STATUS.INFO);
             String message = body.get("message").toString();
@@ -821,13 +837,20 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Put Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
+
+            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            {
+                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+            }
+
+
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
             String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
-        headers.put("bridgeToken", bt);
+        headers.put("bridgeToken", bt+"er");
 
         JsonObject res = null;
 
@@ -841,11 +864,11 @@ public class posttoken extends QuanticAPIBase {
 
         int status = res.get("status").getAsInt();
         GemTestReporter.addTestStep("Status ", String.valueOf(status), STATUS.INFO);
-        if (status == 400) {
+        if (status == 403) {
 
             JsonObject body = res.get("responseError").getAsJsonObject();
             GemTestReporter.addTestStep("Response Body", String.valueOf(body), STATUS.INFO);
-            GemTestReporter.addTestStep("Status Verification", "Expected Status : 400", STATUS.PASS);
+            GemTestReporter.addTestStep("Status Verification", "Expected Status : 403", STATUS.PASS);
 
 
             String l = body.get("operation").toString();
@@ -853,7 +876,7 @@ public class posttoken extends QuanticAPIBase {
         } else if (status == 200) {
 
 
-            GemTestReporter.addTestStep("Status Verification", "Expected Status : 200", STATUS.FAIL);
+            GemTestReporter.addTestStep("Status Verification", "Expected Status : 403", STATUS.FAIL);
             JsonObject body = res.get("responseBody").getAsJsonObject();
             GemTestReporter.addTestStep("Response Body", String.valueOf(body), STATUS.INFO);
             String message = body.get("message").toString();
@@ -863,7 +886,7 @@ public class posttoken extends QuanticAPIBase {
 
             JsonObject body = res.get("responseError").getAsJsonObject();
             GemTestReporter.addTestStep("Response Body", String.valueOf(body), STATUS.INFO);
-            GemTestReporter.addTestStep("Status Verification", "Expected Status : 400", STATUS.FAIL);
+            GemTestReporter.addTestStep("Status Verification", "Expected Status : 403", STATUS.FAIL);
 
 
             String l = body.get("operation").toString();
@@ -893,6 +916,13 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Put Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
+
+
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+           }
+
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
@@ -967,6 +997,10 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest_sampleJson").getAsJsonObject();
+       if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+       {
+        payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+       }
         payload = (JsonObject) ApiHealthCheckUtils.result(payload);
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1030,6 +1064,11 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest1_sampleJson").getAsJsonObject();
+
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+           }
         payload = (JsonObject) ApiHealthCheckUtils.result(payload);
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1100,6 +1139,12 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest2_sampleJson").getAsJsonObject();
+
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+           }
+
         payload = (JsonObject) ApiHealthCheckUtils.result(payload);
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1171,6 +1216,11 @@ public class posttoken extends QuanticAPIBase {
            GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
            JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
+
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+           }
            payload = (JsonObject) ApiHealthCheckUtils.result(payload);
            GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1234,6 +1284,10 @@ public class posttoken extends QuanticAPIBase {
            GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
            JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
+           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           {
+               payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+           }
            payload = (JsonObject) ApiHealthCheckUtils.result(payload);
            GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1297,6 +1351,11 @@ public class posttoken extends QuanticAPIBase {
             GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
             JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
+
+            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            {
+                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+            }
             payload = (JsonObject) ApiHealthCheckUtils.result(payload);
             GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
@@ -1383,6 +1442,14 @@ public class posttoken extends QuanticAPIBase {
 
         //payload
         JsonObject payload = ProjectSampleJson.getSampleData("puter1_sampleJson").getAsJsonObject();
+
+            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            {
+                payload.addProperty("tc_run_id","sample_testcase2_58913eb0-be6f-42c4-ab83-916df5782db5");
+                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
+
+            }
+
         payload = (JsonObject) ApiHealthCheckUtils.result(payload);
 
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
