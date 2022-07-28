@@ -9,7 +9,7 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 
 import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticGlobalVar;
+import com.gemini.generic.GemJARGlobalVar;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -691,7 +691,7 @@ public class posttoken extends QuanticAPIBase {
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_1_sampleJson").getAsJsonObject();
 
-            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
             {
                 payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
             }
@@ -758,7 +758,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
 
 
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c14");
            }
@@ -838,7 +838,7 @@ public class posttoken extends QuanticAPIBase {
 
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
 
-            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
             {
                 payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
             }
@@ -918,7 +918,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject payload = ProjectSampleJson.getSampleData("put_2_sampleJson").getAsJsonObject();
 
 
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
            }
@@ -997,7 +997,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest_sampleJson").getAsJsonObject();
-       if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+       if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
        {
         payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
        }
@@ -1065,7 +1065,7 @@ public class posttoken extends QuanticAPIBase {
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest1_sampleJson").getAsJsonObject();
 
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
            }
@@ -1140,7 +1140,7 @@ public class posttoken extends QuanticAPIBase {
 
         JsonObject payload = ProjectSampleJson.getSampleData("ptest2_sampleJson").getAsJsonObject();
 
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
            }
@@ -1217,7 +1217,7 @@ public class posttoken extends QuanticAPIBase {
 
            JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
 
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
            }
@@ -1284,7 +1284,7 @@ public class posttoken extends QuanticAPIBase {
            GemTestReporter.addTestStep("Url for Post Request", url, STATUS.INFO);
 
            JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
-           if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+           if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
            {
                payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
            }
@@ -1352,7 +1352,7 @@ public class posttoken extends QuanticAPIBase {
 
             JsonObject payload = ProjectSampleJson.getSampleData("ptest3_sampleJson").getAsJsonObject();
 
-            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
             {
                 payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");
             }
@@ -1443,7 +1443,7 @@ public class posttoken extends QuanticAPIBase {
         //payload
         JsonObject payload = ProjectSampleJson.getSampleData("puter1_sampleJson").getAsJsonObject();
 
-            if (QuanticGlobalVar.environment.equalsIgnoreCase("prod"))
+            if (GemJARGlobalVar.environment.equalsIgnoreCase("prod"))
             {
                 payload.addProperty("tc_run_id","sample_testcase2_58913eb0-be6f-42c4-ab83-916df5782db5");
                 payload.addProperty("s_run_id","b2f779e7-a4f2-44d8-a557-b3426ea520c1");

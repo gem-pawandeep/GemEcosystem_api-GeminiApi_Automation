@@ -44,5 +44,23 @@
     "Get": "http://ec2-3-108-218-108.ap-south-1.compute.amazonaws.com:8080/suiteexe?s_run_id=PYGEM_PROJECT_BETA_22994111-A760-47C4-9B42-91EE1D5A1A19",
     "Gettoken": "https://apis-beta.gemecosystem.com/bridge/token",
     "posttoken": "https://apis-beta.gemecosystem.com/bridge/token/change"
+  },
+  "prod": {
+    "Post": "https://apis.gemecosystem.com/user",
+    "Gett": "https://apis.gemecosystem.com/validate/username?username",
+    "Login": "https://apis.gemecosystem.com/login",
+    "Gett2": "https://apis.gemecosystem.com/validate/username?username",
+    "Getc": "https://apis.gemecosystem.com/company",
+    "Gettt": "https://apis.gemecosystem.com/suiteexe?s_run_id",
+    "Gettte": "https://apis.gemecosystem.com/suiteexe?s_run_id",
+    "pospo": "https://apis.gemecosystem.com/suiteexe",
+    "putexe": "https://apis.gemecosystem.com/testcase",
+    "pospos": "https://apis.gemecosystem.com/testcase",
+    "putu": "https://apis.gemecosystem.com/suiteexe",
+    "Gettest": "https://apis.gemecosystem.com/testcase?tc_run_id",
+    "Gettest2": "https://apis.gemecosystem.com/testcase?tc_run_id",
+    "Get": "http://ec2-3-108-218-108.ap-south-1.compute.amazonaws.com:8080/suiteexe?s_run_id",
+    "Gettoken": "https://apis.gemecosystem.com/bridge/token",
+    "posttoken": "https://apis.gemecosystem.com/bridge/token/change"
   }
 }
