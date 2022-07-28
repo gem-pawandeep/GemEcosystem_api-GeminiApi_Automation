@@ -29,6 +29,7 @@ public class get_suite extends QuanticAPIBase {
 
         String url = ProjectApiUrl.getUrl("Gettt");
 
+
         GemTestReporter.addTestStep("Url for Get Request", url, STATUS.INFO);
 
         JsonObject res = null;
