@@ -1,0 +1,1924 @@
+<!--version1.0.4-->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+    ></script>
+
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+    ></script>
+
+    <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"
+            integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+          integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"
+            integrity="sha512-YibiFIKqwi6sZFfPm5HNHQYemJwFbyyYHjrr3UT+VobMt/YBo1kBxgui5RWc4C3B4RJMYCdCAJkbXHt+irKfSA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+  .thumb {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 100px; /* Set a small width */
+  min-height:86px;
+  max-height: 86px;
+}
+.thumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+    body {
+      background: #fafbff;
+      /* transform: scale(0.9);
+      transform-origin: top center; */
+    overflow:auto !important;
+    }
+
+    #heading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 48px;
+      /* identical to box height */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-pills.gempyp .nav-link.active {
+      background: rgba(33, 98, 132, 1);
+      border-radius: 5px;
+      color: white !important;
+    }
+
+    .nav-pills.gempyp .nav-link {
+      color: rgba(33, 98, 132, 1);
+    }
+    .nav-pills.gemjar .nav-link.active {
+      background: rgba(48, 122, 100);
+      border-radius: 5px;
+      color: white !important;
+    }
+
+    .nav-pills.gemjar .nav-link {
+      color: rgba(48, 122, 100);
+    }
+    .tableHeading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.01em;
+      font-weight: bold;
+      float: left;
+    }
+    .accordHeading {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 27px;
+      letter-spacing: 0.01em;
+      font-weight: bold;
+    }
+    .title-card {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      float: left;
+    }
+    .text-card {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 36px;
+      float: left;
+    }
+    table {
+      font-size: 13px !important;
+    }
+    .passTest {
+      color: #2cae21 !important;
+      border-radius: 5px;
+    }
+    .failTest {
+      color: #ea3e3e !important;
+      border-radius: 5px;
+    }
+    .warnTest {
+      color: #ff6c37 !important;
+      border-radius: 5px;
+    }
+    .infoTest {
+      color: #f3bb2a !important;
+      border-radius: 5px;
+    }
+    .incompleteTest {
+      color: #f25c5c !important;
+      border-radius: 5px;
+    }
+    .othersTest {
+      color: #9e9e9e !important;
+      border-radius: 5px;
+    }
+    /* a{
+          color: white !important
+      } */
+    .head {
+      background-color: #375a64;
+      color: white;
+    }
+    .statusColorPass {
+      background-color: #2cae21 !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .statusColorInfo {
+      background-color: #f3bb2a !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .statusColorFail {
+      background-color: #ea3e3e !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .statusColorWarn {
+      background-color: #ff6c37 !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .statusColorIncomplete {
+      background-color: #f25c5c !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .statusColorOthers {
+      background-color: #9e9e9e !important;
+      color: white !important;
+      padding: 5%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .hiddenRow {
+      padding: 0px !important;
+    }
+
+#myImg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal-img {
+  display: none;
+  margin-top:50%;
+  margin-bottom:50%;
+ padding-top:5%;
+  position: fixed;
+  z-index: 1;
+  height:fit-content;
+  background-color: rgb(129, 125, 125);
+  background-color: rgba(129, 125, 125,0.9);
+
+}
+.modal {
+  overflow-y:auto;
+}
+.modal-body {
+    word-wrap: break-word;
+}
+/* Modal Content (image) */
+.modal-img-content {
+  /* max-height: 700px;
+height: 100%;
+  display: block;
+  width: 100vw; */
+
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-img-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    background: #fafbff;
+
+  background:#fafbff;
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: black 1.5em 0 0 0, black 1.1em 1.1em 0 0, black 0 1.5em 0 0, black -1.1em 1.1em 0 0, black -1.5em 0 0 0, black -1.1em -1.1em 0 0, black 0 -1.5em 0 0, black 1.1em -1.1em 0 0;
+box-shadow: black 1.5em 0 0 0, black 1.1em 1.1em 0 0, black 0 1.5em 0 0, black -1.1em 1.1em 0 0, black -1.5em 0 0 0, black -1.1em -1.1em 0 0, black 0 -1.5em 0 0, black 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.setWidth{
+  word-wrap: break-word;
+  max-width: 80px;
+}
+.substepIcon{
+  font-size: 20px;
+  color: #215c1e;
+  cursor: pointer;
+}
+.substepIcon:hover{
+  transform:scale(1.2);
+}
+
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #918b92 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #918b92;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+  *::-webkit-scrollbar:horizontal {
+    background-color: #918b92;
+   width: 5px !important;
+    border: 3px solid #ffffff;
+  }
+
+
+</style>
+<body onload="constructPage()">
+<div id="loading" class="loading">Loading&#8230;
+</div>
+<div class="modal fade"
+     id="myModal"
+     tabindex="-1"
+     role="dialog"
+     data-keyboard="false"
+     data-toggle="modal"
+     data-backdrop="static"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true" data-scroll="false">
+    <div class="modal-dialog modal-xl vertically-centered"
+         role="document">
+        <div class="modal-content" style="width:80vw !important">
+            <!-- Modal heading -->
+            <div class="mb-5 float-right">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                 <span style="color:black !important" aria-hidden="true">
+                   ×
+               </span>
+                </button>
+            </div>
+
+            <!-- Modal body with image -->
+            <div class="modal-body mt-2 text-center mb-2">
+                <img style="width:70vw !important; max-height:450px" class="modal-img-content" id="img01">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- --------------Extra Text Modal---------------- -->
+<div class="modal"
+     id="trimModal"
+     tabindex="-1"
+     role="dialog"
+     data-keyboard="false"
+     data-toggle="modal"
+     data-backdrop="static"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true" data-scroll="false">
+    <div class="modal-dialog modal-xl vertically-centered"
+         role="document">
+        <div class="modal-content" style="width:80vw !important">
+            <!-- Modal heading -->
+            <div class="modal-title mt-3 text-center"><h2 id="trimModaltitle"></h2></div>
+            <div class="mb-3 float-right">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        onClick="closeModal('trimModal')"
+                        aria-label="Close">
+
+                        <span style="color:black !important" aria-hidden="true">
+                          ×
+                      </span>
+                </button>
+            </div>
+
+
+            <!-- Modal body with image -->
+            <div class="modal-body mt-2 text-center mb-2" id="trimModalcontent">
+                <!-- <img style="width:70vw !important; max-height:450px" class="modal-img-content" id="img01"> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onClick="closeModal('trimModal')">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- --------------Extra Text Modal---------------- -->
+
+<div class="container-fluid">
+    <!-- <div class="mt-3 text-center">
+          <div id="myModal" class="modal-img">
+       <span onClick="closeImage()" class="close" style="color:black !important">&times;</span>
+        <img class="modal-img-content" id="img01">
+           <div id="caption"></div>
+         </div>
+        <div> -->
+
+
+    <h4 class="my-4" id="heading">
+        <b
+        ><span id="productType"></span> AUTOMATED TEST EXECUTION REPORT</b
+        >
+    </h4>
+    <div class="ml-5 mt-3">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item mr-1" role="presentation">
+                <button
+                        class="btn nav-link active"
+                        id="pills-overview-tab"
+                        data-toggle="pill"
+                        data-target="#pills-overview"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                        onclick="showFilter('overview')"
+                >
+                    Overview
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button
+                        class="btn nav-link"
+                        id="pills-testcase-tab"
+                        data-toggle="pill"
+                        data-target="#pills-testcase"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                        onclick="showFilter('testcase')"
+                >
+                    Testcase Details
+                </button>
+            </li>
+            <li
+                    id="filters"
+                    class="nav-item ml-auto"
+                    style="float: right; display: none"
+            >
+                <!-- <button
+                        class="btn"
+                        style="
+                    background: white;
+                    border-radius: 5px !important;
+                    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+                  "
+                        onclick="showFilterCards('show')"
+                >
+                    <i class="fa fa-filter"></i> Filters
+                </button> -->
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content" id="pills-tabContent">
+        <div
+                class="tab-pane fade show active overview"
+                id="pills-overview"
+                role="tabpanel"
+                aria-labelledby="pills-overview-tab"
+        ></div>
+        <div
+                class="tab-pane fade"
+                id="pills-testcase"
+                role="tabpanel"
+                aria-labelledby="pills-testcase-tab"
+        >
+            <div class="mt-3 ml-5 mr-1">
+                <div
+                        class="card pt-3 pb-3"
+                        id="filtercard"
+                        style="
+                    display: none;
+                    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+                    border-radius: 4px !important;
+                  "
+                >
+                    <div class="d-flex mx-4 mb-3">
+                        <span id="filterHeading" class="tableHeading">Filters</span>
+                        <span class="ml-auto"
+                        ><i
+                                class="fa fa-times"
+                                style="cursor: pointer"
+                                aria-hidden="true"
+                                onclick="showFilterCards('close')"
+                        ></i>
+                    </span>
+                    </div>
+                    <div class="d-flex ml-4">
+                        <div class="">
+                            <input
+                                    class="form-control search-key"
+                                    type="text"
+                                    id="name"
+                                    placeholder="Search by Tc_name"
+                                    style="width: 270px"
+                            />
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <select
+                                    class="custom-select search-key"
+                                    style="width: 270px"
+                                    id="status"
+                            ></select>
+                        </div>
+                    </div>
+                    <div class="mx-4 mt-3">
+                        <div class="d-flex">
+                            <!-- <button class="btn" id="applyfilter" onclick="applyfilter()" style="display:block; border-radius:5px !important; color: white !important">Apply Filters</button> -->
+                            <button
+                                    class="btn ml-2"
+                                    id="clear"
+                                    onclick="myFunction()"
+                                    style="
+                          display: block;
+                          border-radius: 5px !important;
+                          color: white !important;
+                        "
+                            >
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+<script>
+    theme = {};
+    gempypThemes = {
+      0: "rgba(2, 59, 89)",
+      1: "rgba(33, 98, 132)",
+      2: "rgba(73, 132, 163)",
+    };
+    gemjarThemes = {
+      0: "rgba(48, 122, 100)",
+      1: "rgba(91, 170, 147)",
+      2: "rgba(143, 210, 190)",
+    };
+
+    var obj = {"reportProduct":"GEMJAR","Suits_Details":{"report_type":"Api Automation","s_run_id":"GemEcosystem_api-GeminiApi_Automation_BETA_7ee0ba0c-cec3-4b04-8b4f-c7f0f2d4678d","s_start_time":1657027369,"s_end_time":1657027782,"status":"PASS","project_name":"GemEcosystem_api-GeminiApi_Automation","run_type":"ON DEMAND","user":"ra.suneja","env":"beta","machine":"GEMGN-210212","initiated_by":"ra.suneja","run_mode":"Windows 10","TestCase_Details":[{"tc_run_id":"Getcompany_591fd35d-9058-40a7-8089-017f52af24e7","start_time":1657027369,"end_time":1657027370,"Name":"Getcompany","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Get_data_of_test_case_0c3f6316-090d-4f11-aa68-fe8e5bce00d7","start_time":1657027369,"end_time":1657027370,"Name":"Get_data_of_test_case","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Get_data_of_suite_srunidnotpresent_76df62da-b787-424c-9d99-8503cbd9ad6b","start_time":1657027369,"end_time":1657027370,"Name":"Get_data_of_suite_srunidnotpresent","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Loginuser_1dc19a83-2511-4f73-a6f1-8761ed05e0eb","start_time":1657027369,"end_time":1657027370,"Name":"Loginuser","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Loginuser_empty_body_c3cd6533-8f1f-4a39-a063-223d1abff943","start_time":1657027370,"end_time":1657027370,"Name":"Loginuser_empty_body","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Get_data_of_test_case_tcrunidnotvalid_f316c1a3-616e-4708-b0af-917ea230cd56","start_time":1657027370,"end_time":1657027370,"Name":"Get_data_of_test_case_tcrunidnotvalid","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Get_data_of_suites_1d6c0d45-49ee-42c3-8080-abb19a278232","start_time":1657027370,"end_time":1657027370,"Name":"Get_data_of_suites","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Loginuser_fieldsnotpresent_3ebf66f5-fa30-4ba7-bf29-4fe80a67ea79","start_time":1657027370,"end_time":1657027370,"Name":"Loginuser_fieldsnotpresent","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Gettoken_56f39a63-fe02-46bf-ac95-434ad08ad96d","start_time":1657027370,"end_time":1657027370,"Name":"Gettoken","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Validate_Username_2cc3e5db-6b32-42ad-a337-a427932ec258","start_time":1657027370,"end_time":1657027370,"Name":"Validate_Username","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_New_User_1b30642e-6a49-48bf-ada0-5b4a68d277a6","start_time":1657027370,"end_time":1657027370,"Name":"Create_New_User","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Loginuser_wrongcredentials_3cfde236-b54c-4272-b816-edd09eeb738a","start_time":1657027370,"end_time":1657027370,"Name":"Loginuser_wrongcredentials","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Validate_Username_username_doesnotexists_27556829-e5ad-4395-bf3c-caefc604c856","start_time":1657027370,"end_time":1657027370,"Name":"Validate_Username_username_doesnotexists","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_New_User_bygiving_empty_body_0d76b83c-4221-4f7f-81f2-56551707262c","start_time":1657027370,"end_time":1657027370,"Name":"Create_New_User_bygiving_empty_body","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Gettoken_Empty_auth_1a02fcef-baf1-475c-bc80-1f90233c3d6b","start_time":1657027370,"end_time":1657027370,"Name":"Gettoken_Empty_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_New_User_bygiving_wrong_email_51fed56c-c1b4-40f4-b477-4b23a1b3b297","start_time":1657027370,"end_time":1657027370,"Name":"Create_New_User_bygiving_wrong_email","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_47bf2239-092e-470b-8665-3952aaf3b21d","start_time":1657027369,"end_time":1657027370,"Name":"Create_new_record_for_test_case","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_New_User_compulsory_field_not_present_cb5b0710-e986-40ec-868e-fb5285bb959c","start_time":1657027370,"end_time":1657027370,"Name":"Create_New_User_compulsory_field_not_present","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_New_User_username_alreadyexists_47067554-2f55-4090-8577-f4595b17d46b","start_time":1657027370,"end_time":1657027370,"Name":"Create_New_User_username_alreadyexists","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_Wrong_auth_1e17b500-b84c-4c65-9606-ee4d6692a7b0","start_time":1657027370,"end_time":1657027371,"Name":"Create_new_record_for_test_case_Wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_auth_not_given_4078ea10-dd17-40f0-a8dc-3c4d44e3a958","start_time":1657027371,"end_time":1657027372,"Name":"Create_new_record_for_test_case_auth_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_srunidnotexists_18bd21f7-6b3d-4e70-b5e2-b71347a963a2","start_time":1657027372,"end_time":1657027373,"Name":"Create_new_record_for_test_case_srunidnotexists","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_srunidnotgiven_c4098526-e6ee-42ea-a1ff-68363c12bd61","start_time":1657027373,"end_time":1657027373,"Name":"Create_new_record_for_test_case_srunidnotgiven","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Create_new_record_for_test_case_tc_run_id_not_given_ded8c68f-df28-496f-b690-d9af3616fcd2","start_time":1657027373,"end_time":1657027374,"Name":"Create_new_record_for_test_case_tc_run_id_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Insertsuitess_092c9f30-0d30-48f7-b3b8-77ef94810628","start_time":1657027374,"end_time":1657027374,"Name":"Insertsuitess","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Insertsuitess_auth_not_given_efd6a9ec-2a3f-4494-a87b-d713f4d4c13a","start_time":1657027374,"end_time":1657027375,"Name":"Insertsuitess_auth_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Insertsuitess_s_run_id_not_presentinthepayload_cef4127b-fbf0-41a2-b6ea-3172ec0da4db","start_time":1657027375,"end_time":1657027375,"Name":"Insertsuitess_s_run_id_not_presentinthepayload","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Insertsuitess_s_run_idpresent_01451373-ea00-42d9-94b6-b5c4d7cdcf0f","start_time":1657027375,"end_time":1657027376,"Name":"Insertsuitess_s_run_idpresent","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Insertsuitess_wrong_auth_dc20259c-be4a-4f76-8da9-71c51856b009","start_time":1657027376,"end_time":1657027376,"Name":"Insertsuitess_wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Update_testcase_data_43211ea7-bba2-487e-9646-c0c7f19206fa","start_time":1657027376,"end_time":1657027377,"Name":"Update_testcase_data","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Update_testcase_data_auth_not_given_ea8683fe-a236-4eee-9619-6f22ebd17f85","start_time":1657027377,"end_time":1657027377,"Name":"Update_testcase_data_auth_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Update_testcase_data_srunidnotgiven_0d510041-7f6d-4017-8e20-51545f4902ee","start_time":1657027377,"end_time":1657027378,"Name":"Update_testcase_data_srunidnotgiven","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Update_testcase_data_tcrunidnotgiven_ea48b100-a71c-4445-80e2-fe535387db88","start_time":1657027378,"end_time":1657027378,"Name":"Update_testcase_data_tcrunidnotgiven","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Update_testcase_data_wrong_auth_5dbea0e5-f079-4a89-9a30-eae965240d7d","start_time":1657027378,"end_time":1657027379,"Name":"Update_testcase_data_wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Updatesuite_f7618ff1-f784-4e01-9580-78b00cb0fbaf","start_time":1657027379,"end_time":1657027379,"Name":"Updatesuite","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Updatesuite_auth_not_given_e34acfd1-15f1-4793-a3d4-2808e877651f","start_time":1657027379,"end_time":1657027379,"Name":"Updatesuite_auth_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Updatesuite_srunidnotpresent_f4137831-2394-40b0-a998-5d929355cc22","start_time":1657027379,"end_time":1657027380,"Name":"Updatesuite_srunidnotpresent","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Updatesuite_wrong_auth_c57071e0-64ea-4bff-a17a-59e7e030cd4c","start_time":1657027380,"end_time":1657027381,"Name":"Updatesuite_wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"changetoken_25f2810a-890e-44e1-97d9-d8cd414e6808","start_time":1657027381,"end_time":1657027381,"Name":"changetoken","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"changetoken_Wrong_auth_1be38d18-db66-4442-99b3-d53752f666f5","start_time":1657027381,"end_time":1657027381,"Name":"changetoken_Wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"changetoken_header_not_given_8e9e8293-7752-4570-9de6-2377aab2ff85","start_time":1657027381,"end_time":1657027382,"Name":"changetoken_header_not_given","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Gettoken_JWT_expired_941681b5-b7fa-4a7b-a8da-2da83d5604fd","start_time":1657027370,"end_time":1657027770,"Name":"Gettoken_JWT_expired","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"Gettoken_wrong_auth_df39398c-07f1-4dc0-ac69-4f09342d870d","start_time":1657027770,"end_time":1657027770,"Name":"Gettoken_wrong_auth","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false},{"tc_run_id":"changetoken_jwtexpired_6994fdc9-f5eb-4d86-81b7-b91b45d2177a","start_time":1657027382,"end_time":1657027782,"Name":"changetoken_jwtexpired","Category":"Method","status":"PASS","User":"ra.suneja","Machine":"GEMGN-210212","ignore":false}],"Testcase_Info":{"FAIL":0,"PASS":44,"TOTAL":44}},"TestStep_Details":{"Getcompany_591fd35d-9058-40a7-8089-017f52af24e7":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Company API ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/company","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":[\"gemecosystem\",\"gemui\",\"pygem\",\"dummy\",\"duczkjmmy\",\"gemini\",\"gem\",\"company1\",\"company7\",\"company8\",\"company3\",\"company123\",\"company9\",\"company4\",\"company2\",\"company5\",\"company6\",\"companym\"],\"message\":\"18 Records Found\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"18 Records Found\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Getcompany","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027369,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027369,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Get_data_of_test_case_0c3f6316-090d-4f11-aa68-fe8e5bce00d7":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Test Exe API ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase?tc_run_id=dummy_test_id","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"tc_run_id\":\"dummy_test_id\",\"start_time\":1648730506766,\"end_time\":1648730506767,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"steps\":null,\"miscData\":[],\"s_run_id\":\"testsuiteid\"},\"message\":\"Data fetched successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"Data fetched successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Get_data_of_test_case","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027369,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027369,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Get_data_of_suite_srunidnotpresent_76df62da-b787-424c-9d99-8503cbd9ad6b":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Suite API when S-run-id not present ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe?s_run_id=testt","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"s_run_id not valid\",\"operation\":\"Failure\"}","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"s_run_id not valid","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Get_data_of_suite_srunidnotpresent","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027369,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027369,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"Loginuser_1dc19a83-2511-4f73-a6f1-8761ed05e0eb":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Login User Api  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/login","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"raghav.suneja\",\"password\":\"raghav1234\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWdoYXYuc3VuZWphIiwiaWF0IjoxNjU3MDI3Mjc5LCJleHAiOjE2NTcwMjc1Nzl9.mBrmfcZChHw6OQ4IEyP4e9QhTT9l9Z6RfyU-Ay8iwBnp1UAgucEUnfljmlBBt7NylIoBL4kD3gz5Bi77J9GmRg\"},\"message\":\"Login Success\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Bridge Token</b>","Description":"{\"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWdoYXYuc3VuZWphIiwiaWF0IjoxNjU3MDI3Mjc5LCJleHAiOjE2NTcwMjc1Nzl9.mBrmfcZChHw6OQ4IEyP4e9QhTT9l9Z6RfyU-Ay8iwBnp1UAgucEUnfljmlBBt7NylIoBL4kD3gz5Bi77J9GmRg\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Login Success\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Loginuser","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027369,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027369,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Loginuser_empty_body_c3cd6533-8f1f-4a39-a063-223d1abff943":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Login User Api when body is empty ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/login","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"500","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 500","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"timestamp\":\"2022-07-05T13:21:19.219+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"path\":\"/login\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Loginuser_empty_body","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Get_data_of_test_case_tcrunidnotvalid_f316c1a3-616e-4708-b0af-917ea230cd56":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Test Exe API when tc run id is not valid ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase?tc_run_id=dummy_test_iddd","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"tc_run_id not valid\",\"operation\":\"Failure\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Get_data_of_test_case_tcrunidnotvalid","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":5,"PASS":2,"INFO":3}]},"Get_data_of_suites_1d6c0d45-49ee-42c3-8080-abb19a278232":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Suite API ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe?s_run_id=tes","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"s_run_id\":\"tes\",\"s_id\":\"test_id\",\"s_start_time\":1648730506509,\"s_end_time\":1648730506767,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"testcaseDetails\":null},\"message\":\"Data fetched successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"Data fetched successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Get_data_of_suites","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Loginuser_fieldsnotpresent_3ebf66f5-fa30-4ba7-bf29-4fe80a67ea79":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Login User Api when some fields are not present ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/login","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"user1u23\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"500","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 500","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"timestamp\":\"2022-07-05T13:21:19.310+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"path\":\"/login\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Loginuser_fieldsnotpresent","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Gettoken_56f39a63-fe02-46bf-ac95-434ad08ad96d":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Token API when the JWT is not expired","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"bridgeToken\":\"518178f9-2479-4f31-95c4-4062c01442b41657027279253\"},\"message\":\"Token Fetched\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"Token Fetched\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Gettoken","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Validate_Username_2cc3e5db-6b32-42ad-a337-a427932ec258":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get API ","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/validate/username?username=user123","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"isPresent\":true},\"message\":\"User Exists\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"OK\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Validate_Username","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Create_New_User_1b30642e-6a49-48bf-ada0-5b4a68d277a6":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Post function by creating new user ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/user","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"1657027370158\",\"firstName\":\"test\",\"lastName\":\"user\",\"email\":\"22@geminisolutions.com\",\"password\":\"abcd\",\"company\":\"Dummy\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"201","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 201","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"bridgeToken\":\"eb3d8836-6156-4b91-85fa-a0f4f84c335f1657027279430\"},\"message\":\"User created successfully\",\"operation\":\"success\"}","status":"INFO"},{"Title":"<b>Bridge Token</b>","Description":"eb3d8836-6156-4b91-85fa-a0f4f84c335f1657027279430","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"User created successfully\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_New_User","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Loginuser_wrongcredentials_3cfde236-b54c-4272-b816-edd09eeb738a":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Login User Api by wrong credentials ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/login","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"user1u23\",\"password\":\"abcd\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"Login Failed\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Loginuser_wrongcredentials","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Validate_Username_username_doesnotexists_27556829-e5ad-4395-bf3c-caefc604c856":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get API when the username doesnot exists","status":"INFO"},{"Title":"<b>Url for Get  Request</b>","Description":"https://apis-beta.gemecosystem.com/validate/username?username=user1234566","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"isPresent\":false},\"message\":\"User Does Not Exists\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"OK\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Validate_Username_username_doesnotexists","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Create_New_User_bygiving_empty_body_0d76b83c-4221-4f7f-81f2-56551707262c":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Post function by creating new user when the body is empty","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/user","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"500","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 500","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Compulsory Field Exception\",\"operation\":\"Error\"}","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"Compulsory Field Exception","status":"INFO"}],"metaData":[{"TESTCASE NAME":"Create_New_User_bygiving_empty_body","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Gettoken_Empty_auth_1a02fcef-baf1-475c-bc80-1f90233c3d6b":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Token API when Auth header is not given","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Gettoken_Empty_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"Create_New_User_bygiving_wrong_email_51fed56c-c1b4-40f4-b477-4b23a1b3b297":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Post function by creating new user when the Email format is not correct","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/user","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"user123\",\"firstName\":\"test\",\"lastName\":\"user\",\"email\":\"testusergamil\",\"password\":\"abcd\",\"company\":\"Dummy\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"Please enter valid email address ending with 'geminisolutions.com' or 'geminisolutions.us'\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_New_User_bygiving_wrong_email","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":6,"PASS":2,"INFO":4}]},"Create_new_record_for_test_case_47bf2239-092e-470b-8665-3952aaf3b21d":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"tc_run_id\":\"165702737022705072022065250\",\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=518178f9-2479-4f31-95c4-4062c01442b41657027279253, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"201","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 201","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"tc_run_id\":\"165702737022705072022065250\",\"start_time\":1648730506766,\"end_time\":1648730506767,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"steps\":null,\"miscData\":[],\"s_run_id\":\"testsuiteid\"},\"message\":\"Inserted successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Inserted successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027369,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027369,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Create_New_User_compulsory_field_not_present_cb5b0710-e986-40ec-868e-fb5285bb959c":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Post function by creating new user when the compulsory fields are not present","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/user","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"email\":\"testuser@geminisolutions.com\",\"password\":\"1657027370550\",\"company\":\"Dummy\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"500","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 500","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Compulsory Field Exception\",\"operation\":\"Error\"}","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"Compulsory Field Exception","status":"INFO"}],"metaData":[{"TESTCASE NAME":"Create_New_User_compulsory_field_not_present","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Create_New_User_username_alreadyexists_47067554-2f55-4090-8577-f4595b17d46b":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Post function by creating new user when the username already exists ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/user","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"username\":\"user123\",\"firstName\":\"test\",\"lastName\":\"user\",\"email\":\"testuser@geminisolutions.com\",\"password\":\"abcd\",\"company\":\"Dummy\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"409","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 409","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Username already exists\",\"operation\":\"Error\"}","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"Username already exists","status":"INFO"}],"metaData":[{"TESTCASE NAME":"Create_New_User_username_alreadyexists","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027370,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Create_new_record_for_test_case_Wrong_auth_1e17b500-b84c-4c65-9606-ee4d6692a7b0":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function when user gives the wrong auth  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=7bef77d4-5d72-47ef-b243-89d204b9c50f1657027279918kkll, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Reason of rejection</b>","Description":"\"Invalid Bridge Token or username\"","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Error\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case_Wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027371,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":10,"PASS":3,"INFO":7}]},"Create_new_record_for_test_case_auth_not_given_4078ea10-dd17-40f0-a8dc-3c4d44e3a958":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function when user Does not gives auth  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=7f99c0c9-07e8-4e68-9496-a188ff60fa9b1657027281342kkll, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Reason of rejection</b>","Description":"\"Invalid Bridge Token or username\"","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Error\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case_auth_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027371,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027371,"type":"date"},"EXECUTION ENDED ON":{"value":1657027372,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":10,"PASS":3,"INFO":7}]},"Create_new_record_for_test_case_srunidnotexists_18bd21f7-6b3d-4e70-b5e2-b71347a963a2":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function S_run_id  Does not Exist in the database ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"tc_run_id\":\"dummyrtrtrt\",\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid1\"}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=39e4810d-8088-40fb-a916-e04e1482d5d21657027282062, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"s_run_id not present\",\"operation\":\"Failure\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"\"Failure\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case_srunidnotexists","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027372,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027372,"type":"date"},"EXECUTION ENDED ON":{"value":1657027373,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Create_new_record_for_test_case_srunidnotgiven_c4098526-e6ee-42ea-a1ff-68363c12bd61":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function S_run_id  is not given by the user ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"tc_run_id\":\"dummyrtrtrt\",\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}]}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=b2dffcf5-66f9-4557-8256-b7731b2642de1657027282601, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"s_run_id not present\",\"operation\":\"Failure\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"\"Failure\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case_srunidnotgiven","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027373,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027373,"type":"date"},"EXECUTION ENDED ON":{"value":1657027373,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Create_new_record_for_test_case_tc_run_id_not_given_ded8c68f-df28-496f-b690-d9af3616fcd2":{"steps":[{"Title":"<b>Test Case</b>","Description":"To create a new testcase in the database using Post function when user doesnot give tc run id in the payload  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=28140c14-2f66-412b-95d3-409b1bd020801657027283024, username=raghav.suneja}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"201","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 201","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"tc_run_id\":\"sample_testcase2_d349eba5-3463-4495-9d81-4427042e3b09\",\"start_time\":1648730506766,\"end_time\":1648730506767,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"PASS\",\"user\":\"test_user\",\"machine\":\"csgeek\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"steps\":null,\"miscData\":[],\"s_run_id\":\"testsuiteid\"},\"message\":\"Inserted successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Inserted successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Create_new_record_for_test_case_tc_run_id_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027373,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027373,"type":"date"},"EXECUTION ENDED ON":{"value":1657027374,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Insertsuitess_092c9f30-0d30-48f7-b3b8-77ef94810628":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to insert the suite using Post API  ","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"818c41c7-934c-4959-b9c7-2942e8fcd4f2\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"201","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 201","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"s_run_id\":\"818c41c7-934c-4959-b9c7-2942e8fcd4f2\",\"s_id\":\"test_id\",\"s_start_time\":1648730506509,\"s_end_time\":1648730506767,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"testcaseDetails\":null},\"message\":\"inserted successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"inserted successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Insertsuitess","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027374,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027374,"type":"date"},"EXECUTION ENDED ON":{"value":1657027374,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Insertsuitess_auth_not_given_efd6a9ec-2a3f-4494-a87b-d713f4d4c13a":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to insert the suite using Post API when Wrong Auth is given","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Insertsuitess_auth_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027374,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027374,"type":"date"},"EXECUTION ENDED ON":{"value":1657027375,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Insertsuitess_s_run_id_not_presentinthepayload_cef4127b-fbf0-41a2-b6ea-3172ec0da4db":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to insert the suite using Post API when S-run-id is not given in the payload","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"201","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 201","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"s_run_id\":\"pygem_project_beta_bfe3feb8-9614-43e8-840c-0076495e295d\",\"s_id\":\"test_id\",\"s_start_time\":1648730506509,\"s_end_time\":1648730506767,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"testcaseDetails\":null},\"message\":\"Inserted successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"Inserted successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Insertsuitess_s_run_id_not_presentinthepayload","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027375,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027375,"type":"date"},"EXECUTION ENDED ON":{"value":1657027375,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Insertsuitess_s_run_idpresent_01451373-ea00-42d9-94b6-b5c4d7cdcf0f":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to insert the suite using Post API when S-run-id is already present","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"testsuiteioood\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"s_run_id already present\",\"operation\":\"Failure\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final Message </b>","Description":"\"s_run_id already present\"","status":"INFO"}],"metaData":[{"TESTCASE NAME":"Insertsuitess_s_run_idpresent","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027375,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027375,"type":"date"},"EXECUTION ENDED ON":{"value":1657027376,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":8,"PASS":2,"INFO":6}]},"Insertsuitess_wrong_auth_dc20259c-be4a-4f76-8da9-71c51856b009":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to insert the suite using Post API when Wrong Auth is given","status":"INFO"},{"Title":"<b>Url for Post Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Insertsuitess_wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027376,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027376,"type":"date"},"EXECUTION ENDED ON":{"value":1657027376,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Update_testcase_data_43211ea7-bba2-487e-9646-c0c7f19206fa":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Put function ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=006e5f6f-5d8b-4aeb-b88a-8ad066a10ab11657027286035, username=raghav.suneja}","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"tc_run_id\":\"dummy_test_ids\",\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"1657027377010\",\"user\":\"test_user\",\"machine\":\"fc7997be-0975-44a3-97e2-45242597a857\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"tc_run_id\":\"dummy_test_ids\",\"start_time\":1648730506766,\"end_time\":1648730506767,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"1657027377010\",\"user\":\"test_user\",\"machine\":\"fc7997be-0975-44a3-97e2-45242597a857\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"steps\":null,\"miscData\":[],\"s_run_id\":\"testsuiteid\"},\"message\":\"updated successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"updated successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Update_testcase_data","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027376,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027376,"type":"date"},"EXECUTION ENDED ON":{"value":1657027377,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":9,"PASS":3,"INFO":6}]},"Update_testcase_data_auth_not_given_ea8683fe-a236-4eee-9619-6f22ebd17f85":{"steps":[{"Title":"<b>Test Case</b>","Description":"To update data of particular testcase using tc_run_id when user does not gives the authorization ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=e37db336-1d01-4dac-8ac7-54c7f4c324df1657027286639ddddd, username=raghav.suneja}","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"FAIL\",\"user\":\"test_user\",\"machine\":\"rere\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Update_testcase_data_auth_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027377,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027377,"type":"date"},"EXECUTION ENDED ON":{"value":1657027377,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Update_testcase_data_srunidnotgiven_0d510041-7f6d-4017-8e20-51545f4902ee":{"steps":[{"Title":"<b>Test Case</b>","Description":"To update data of particular testcase using tc_run_id when s run id is not given by the user ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=6582f413-664e-4f70-98ff-557db793a0241657027287070, username=raghav.suneja}","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"tc_run_id\":\"dummy_test_ids\",\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"FAIL\",\"user\":\"test_user\",\"machine\":\"rere\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}]}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"s_run_id not present\",\"operation\":\"Failure\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Update_testcase_data_srunidnotgiven","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027377,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027377,"type":"date"},"EXECUTION ENDED ON":{"value":1657027378,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Update_testcase_data_tcrunidnotgiven_ea48b100-a71c-4445-80e2-fe535387db88":{"steps":[{"Title":"<b>Test Case</b>","Description":"To update data of particular testcase using tc_run_id when Tc run id is not given by the user ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=aa6e4a02-71c7-44a0-8edf-89dc9eee67141657027287493, username=raghav.suneja}","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"FAIL\",\"user\":\"test_user\",\"machine\":\"rere\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"tc_run_id not present\",\"operation\":\"Failure\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Update_testcase_data_tcrunidnotgiven","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027378,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027378,"type":"date"},"EXECUTION ENDED ON":{"value":1657027378,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Update_testcase_data_wrong_auth_5dbea0e5-f079-4a89-9a30-eae965240d7d":{"steps":[{"Title":"<b>Test Case</b>","Description":"To update data of particular testcase using tc_run_id when user goves the wrong authorization ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/testcase","status":"INFO"},{"Title":"<b>Headers</b>","Description":"{bridgeToken=dc7e9b2f-8c6b-4a29-a9b5-92092cb3c2d61657027287935ddddd, username=raghav.suneja}","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"start_time\":1648730506766.7388,\"end_time\":1648730506767.14,\"name\":\"sample_testcase2\",\"category\":\"sample\",\"log_file\":null,\"status\":\"FAIL\",\"user\":\"test_user\",\"machine\":\"rere\",\"result_file\":null,\"product_type\":\"PYGEM\",\"ignore\":false,\"miscData\":[],\"steps\":[{\"title\":\"test\",\"desc\":\"testdesc\",\"status\":\"PASS\"},{\"title\":\"test1\",\"desc\":\"testdesc1\",\"status\":\"FAIL\"},{\"title\":\"test2\",\"desc\":\"testdesc2\",\"status\":\"EXE\"}],\"s_run_id\":\"testsuiteid\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"{\"data\":null,\"message\":\"Invalid Bridge Token or username\",\"operation\":\"Error\"}","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Update_testcase_data_wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027378,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027378,"type":"date"},"EXECUTION ENDED ON":{"value":1657027379,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Updatesuite_f7618ff1-f784-4e01-9580-78b00cb0fbaf":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to Update the suite using Put API  ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"tesaa\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response Body</b>","Description":"{\"data\":{\"s_run_id\":\"tesaa\",\"s_id\":\"test_id\",\"s_start_time\":1648730506509,\"s_end_time\":1648730506767,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"testcaseDetails\":null},\"message\":\"updated successfully!\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message</b>","Description":"\"updated successfully!\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Updatesuite","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027379,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027379,"type":"date"},"EXECUTION ENDED ON":{"value":1657027379,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Updatesuite_auth_not_given_e34acfd1-15f1-4793-a3d4-2808e877651f":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to Update the suite using Put API and Auth header is not given ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"testsuiteidaaaaaaaaaaaaaaaaaaaaaaa\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final Body</b>","Description":"Null","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Updatesuite_auth_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027379,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027379,"type":"date"},"EXECUTION ENDED ON":{"value":1657027379,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"Updatesuite_srunidnotpresent_f4137831-2394-40b0-a998-5d929355cc22":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to Update the suite using Put API and the s-run_id is not present in the database ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"testsuiteidaaaaaaaaaaaaaaaaaaaaaaa\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"s_run_id not valid\",\"operation\":\"Failure\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"\"Failure\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Updatesuite_srunidnotpresent","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027379,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027379,"type":"date"},"EXECUTION ENDED ON":{"value":1657027380,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"Updatesuite_wrong_auth_c57071e0-64ea-4bff-a17a-59e7e030cd4c":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to Update the suite using Put API and Auth is not correct ","status":"INFO"},{"Title":"<b>Url for Put Request</b>","Description":"https://apis-beta.gemecosystem.com/suiteexe","status":"INFO"},{"Title":"<b>Payload </b>","Description":"{\"s_run_id\":\"testsuiteidaaaaaaaaaaaaaaaaaaaaaaa\",\"s_start_time\":1648730506509.737,\"s_end_time\":1648730506767.352,\"status\":\"FAIL\",\"project_name\":\"pygem_project\",\"run_type\":\"ON DEMAND\",\"s_report_type\":null,\"user\":\"test_user\",\"env\":\"beta\",\"machine\":\"csgeek\",\"initiated_by\":\"test_user\",\"run_mode\":\"LINUX_CLI\",\"miscData\":[],\"s_id\":\"test_id\"}","status":"INFO"},{"Title":"<b> Put Request Verification </b>","Description":"Put Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"400","status":"INFO"},{"Title":"<b>Response Body</b>","Description":"{\"data\":null,\"message\":\"s_run_id not valid\",\"operation\":\"Failure\"}","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 400","status":"PASS"},{"Title":"<b>Final Message</b>","Description":"\"Failure\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Updatesuite_wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027380,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027380,"type":"date"},"EXECUTION ENDED ON":{"value":1657027381,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":8,"PASS":3,"INFO":5}]},"changetoken_25f2810a-890e-44e1-97d9-d8cd414e6808":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Change Token API when the JWT is not expired","status":"INFO"},{"Title":"<b>Url for Post  Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token/change","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"200","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 200","status":"PASS"},{"Title":"<b>Response After hitting the API </b>","Description":"{\"data\":{\"bridgeToken\":\"c4c2fcf9-32ca-48b4-b120-f55e2b6cb62d1657027290671\"},\"message\":\"Token Changed\",\"operation\":\"Success\"}","status":"INFO"},{"Title":"<b>Final Message </b>","Description":"\"Token Changed\"","status":"PASS"}],"metaData":[{"TESTCASE NAME":"changetoken","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027381,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027381,"type":"date"},"EXECUTION ENDED ON":{"value":1657027381,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":7,"PASS":3,"INFO":4}]},"changetoken_Wrong_auth_1be38d18-db66-4442-99b3-d53752f666f5":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Change Token API when the Authorisation is wrong","status":"INFO"},{"Title":"<b>Url for Post  Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token/change","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"changetoken_Wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027381,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027381,"type":"date"},"EXECUTION ENDED ON":{"value":1657027381,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"changetoken_header_not_given_8e9e8293-7752-4570-9de6-2377aab2ff85":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Change Token API when the Auth header is not given","status":"INFO"},{"Title":"<b>Url for Post  Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token/change","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"changetoken_header_not_given","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027381,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027381,"type":"date"},"EXECUTION ENDED ON":{"value":1657027382,"type":"date"},"EXECUTION DURATION":"0.001 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"Gettoken_JWT_expired_941681b5-b7fa-4a7b-a8da-2da83d5604fd":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Token API when the JWT is  expired","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status :403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Gettoken_JWT_expired","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027370,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027370,"type":"date"},"EXECUTION ENDED ON":{"value":1657027770,"type":"date"},"EXECUTION DURATION":"0.4 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"Gettoken_wrong_auth_df39398c-07f1-4dc0-ac69-4f09342d870d":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Get Token API when JMT in the headers is wrong","status":"INFO"},{"Title":"<b>Url for Get Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token","status":"INFO"},{"Title":"<b> Get Request Verification </b>","Description":"Get Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"Gettoken_wrong_auth","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027770,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027770,"type":"date"},"EXECUTION ENDED ON":{"value":1657027770,"type":"date"},"EXECUTION DURATION":"0.0 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]},"changetoken_jwtexpired_6994fdc9-f5eb-4d86-81b7-b91b45d2177a":{"steps":[{"Title":"<b>Test Case</b>","Description":"Test to check the Change Token API when the JWT is expired","status":"INFO"},{"Title":"<b>Url for Post  Request</b>","Description":"https://apis-beta.gemecosystem.com/bridge/token/change","status":"INFO"},{"Title":"<b> Post Request Verification </b>","Description":"Post Request Executed Successfully","status":"PASS"},{"Title":"<b>Status </b>","Description":"403","status":"INFO"},{"Title":"<b>Status Verification</b>","Description":"Expected Status : 403","status":"PASS"},{"Title":"<b>Final response</b>","Description":"No response","status":"PASS"}],"metaData":[{"TESTCASE NAME":"changetoken_jwtexpired","SERVICE PROJECT":"","DATE OF EXECUTION":{"value":1657027382,"type":"date"}},{"EXECUTION STARTED ON":{"value":1657027382,"type":"date"},"EXECUTION ENDED ON":{"value":1657027782,"type":"date"},"EXECUTION DURATION":"0.4 seconds"},{"TOTAL":6,"PASS":3,"INFO":3}]}}};
+
+    // console.log(stepobj);
+    console.log(obj);
+
+    if (obj.reportProduct === "GEMPYP") {
+      theme = gempypThemes;
+    } else if (obj.reportProduct === "GEMJAR") {
+      theme = gemjarThemes;
+    } else {
+    }
+    obj.Suits_Details.TestCase_Details = changeFormat(
+      obj.Suits_Details.TestCase_Details
+    );
+    var excludeHeader = [
+      "tc_run_id",
+      "steps",
+      "execution_metadata",
+      "result_file",
+      "ignore",
+    ];
+    var sortType = "";
+    var lastsortHeader = "";
+    var exeHeaders = {
+      STATUS: "status",
+      "PROJECT NAME": "project_name",
+      "REPORT TYPE": "report_type",
+      ENV: "env",
+      START_TIME: "s_start_time",
+      END_TIME: "s_end_time",
+      DURATION: "duration",
+    };
+    var infraHeaders = {
+      "EXECUTED BY": "user",
+      "EXECUTED ON": "machine",
+      RUN_TYPE: "run_type",
+      RUN_MODE: "run_mode",
+    };
+    var options = getOptions(obj.Suits_Details.TestCase_Details);
+    for (var i = 0; i < options.length; i++) {
+      var opt = options[i];
+      var el = document.createElement("option");
+      el.textContent = opt;
+      el.value = opt;
+      $("#status").append(el);
+    }
+
+    function changeFormat(value) {
+      for (var i = 0; i < value.length; i++) {
+        var keys = Object.keys(value[i]);
+        for (var j = 0; j < keys.length; j++) {
+          if (typeof value[i][keys[j]] != "object") {
+            value[i][keys[j]] = {
+              value: value[i][keys[j]],
+              sortValue: value[i][keys[j]],
+            };
+          }
+        }
+      }
+      return value;
+    }
+    function constructPage() {
+
+      var infraTable = getInfraDetailsTable(obj.Suits_Details);
+      $("#pills-overview").append(infraTable);
+      var cardDetailsOverview = getCardDetails(obj.Suits_Details.Testcase_Info,'overview');
+      var cardDetailsTestcase = getCardDetails(obj.Suits_Details.Testcase_Info,'testcase');
+
+      $("#pills-overview").append(cardDetailsOverview);
+      $("#pills-testcase").append(cardDetailsTestcase);
+      var exeTable = getExecutionDetailsTable(obj.Suits_Details);
+      $("#pills-overview").append(exeTable);
+
+      document.getElementById("productType").innerText = obj.reportProduct;
+      $("#heading").css("color", theme[0]);
+      $("#filterHeading").css("color", theme[0]);
+      $("#filtercard").hover(
+        function () {
+          var col = "1px solid " + theme[0];
+          $(this).css("border", col);
+        },
+        function () {
+          $(this).css("border", "none");
+        }
+      );
+      $("#clear").css("background-color", theme[2]);
+      if (obj.reportProduct === "GEMPYP") {
+        $(".nav-pills").addClass("gempyp");
+      } else if (obj.reportProduct === "GEMJAR") {
+        $(".nav-pills").addClass("gemjar");
+      } else {
+      }
+
+      var testcaseDetailsTable = getTestcaseDetailsTable(
+        obj.Suits_Details.TestCase_Details
+      );
+      $("#pills-testcase").append(testcaseDetailsTable);
+
+      $('#loading').hide();
+
+    }
+
+    function getTestcaseDetailsTable(list) {
+      var div = $("<div/>").addClass("mt-5 mx-4 container-fluid");
+
+      var cols = [];
+
+      for (var i = 0; i < list.length; i++) {
+        for (var k in list[i]) {
+          if (cols.indexOf(k) === -1) {
+            // Push all keys to the array
+            if (!excludeHeader.includes(k)) {
+              cols.push(k);
+            }
+          }
+        }
+      }
+      if (!cols.includes("DURATION")) {
+        cols.push("DURATION");
+      }
+      if (!cols.includes("S.No.")) {
+        cols.unshift("S.No.");
+      }
+      // Create a table element
+      var table = document.createElement("table");
+      table.id = "tab";
+      table.className =
+        "table table-borderless table-responsive w-100 d-block d-md-table";
+      table.style.boxShadow = "0px 4px 8px rgba(0, 71, 136, 0.11)";
+      table.style.borderRadius = "4px";
+      // Create table row tr element of a table
+      var tr = table.insertRow(-1);
+      for (var i = 0; i < cols.length; i++) {
+        // Create the table header th element
+        var theader = document.createElement("th");
+        theader.style.backgroundColor =
+          theme[2].substring(0, theme[2].length - 1) + ", 0.1)";
+        theader.innerHTML = cols[i];
+        theader.id = cols[i] + "_tc";
+        theader.addEventListener("click", getsort, true);
+        // Append columnName to the table row
+        tr.appendChild(theader);
+      }
+
+      // Adding the data to the table
+      for (var i = 0; i < list.length; i++) {
+        // Create a new row
+        if (list[i]["ignore"] !== true) {
+          trow = table.insertRow(-1);
+
+          trow.setAttribute("data-toggle", "collapse");
+          trow.setAttribute("data-target", "#accord" + i);
+          trow.className = "checkCollapse";
+          trow.style.background = "white";
+          for (var j = 0; j < cols.length; j++) {
+            var cell = trow.insertCell(-1);
+            cell.addEventListener("click",function(){
+              $("#tab").find("tbody").find("tr").not(".accordRow").not(".checkCollapse").not(":first").fadeIn("fast");
+          });
+            var att = document.createAttribute("data-input");
+            if (cols[j].includes(" ")) {
+              var v = cols[j].replace(" ", "_");
+              att.value = v;
+            } else {
+              att.value = cols[j];
+            }
+            cell.setAttributeNode(att);
+
+            if (cols[j] === "status") {
+              // cell.innerHTML = list[i][cols[j]];
+              var link = document.createElement("div");
+              link.className = "btn-sm";
+              cell.setAttribute("class", "status");
+              link.innerHTML = list[i][cols[j]]["value"];
+              cell.appendChild(link);
+              if (list[i][cols[j]]["value"] === "PASS") {
+                link.className = "statusColorPass";
+              } else if (list[i][cols[j]]["value"] === "FAIL") {
+                link.className = "statusColorFail";
+              } else if (list[i][cols[j]]["value"] === "INFO") {
+                link.className = "statusColorInfo";
+              } else if (list[i][cols[j]]["value"] === "WARN") {
+                link.className = "statusColorWarn";
+              } else if (list[i][cols[j]]["value"] === "INCOMPLETE") {
+                link.className = "statusColorIncomplete";
+              } else {
+                link.className = "statusColorOthers";
+              }
+              // link.style.width='fit-content';
+            } else if (cols[j].toUpperCase().includes("TIME")) {
+              cell.innerHTML = changeTime(list[i][cols[j]]["value"]);
+            } else if (cols[j].includes("S.No.")) {
+              cell.innerHTML = changeSerial(i)["value"];
+              // cell.style.maxWidth ="20px !important";
+            } else if (cols[j].toUpperCase().includes("DURATION")) {
+              cell.innerHTML = getDuration(
+                list[i]["start_time"]["value"],
+                list[i]["end_time"]["value"],
+                i
+              )["value"];
+            } else if (cols[j].toUpperCase().includes("LOG_FILE")) {
+              if (!list[i][cols[j]]) {
+                cell.innerHTML = "None";
+              } else {
+                var link = document.createElement("a");
+                link.href = list[i][cols[j]]["value"];
+                link.target = "_blank";
+                link.innerHTML = "View";
+                link.addEventListener("click", function (e) {
+                  e.stopImmediatePropagation();
+                });
+                cell.appendChild(link);
+              }
+            }else if(cols[j].toUpperCase().includes("NAME")) {
+              cell.setAttribute("class","testfilt");
+              cell.innerHTML = list[i][cols[j]]["value"];
+            }
+            else {
+              if (!list[i][cols[j]]) {
+                cell.innerHTML = "None";
+              } else{
+              cell.innerHTML = list[i][cols[j]]["value"];
+              }
+            }
+          }
+        }
+        trowAccor = table.insertRow(-1);
+        tcellAccord = trowAccor.insertCell(-1);
+        tcellAccord.className = "hiddenRow";
+        tcellAccord.setAttribute("colspan", cols.length);
+
+
+
+
+        var accordDiv = document.createElement("div");
+        accordDiv.className = "accordion-body collapse";
+        accordDiv.id = "accord" + i;
+        accordDiv.setAttribute("data-parent", "#tab");
+        var accordHeading = $("<div/>")
+          .html("Test Step Report")
+          .addClass("mb-2 accordHeading mt-4 text-center")
+          .css("color", theme[0]);
+        accordDiv.append(accordHeading[0]);
+        var stepCard = createAccordionCards(
+          obj.TestStep_Details[list[i]["tc_run_id"]["value"]].metaData[2],
+          i
+        );
+        stepCard.addClass("mt-4");
+        accordDiv.append(stepCard[0]);
+        var stepDetails = createAccordionMetaDetails(
+          obj.TestStep_Details[list[i]["tc_run_id"]["value"]].metaData
+        );
+        accordDiv.append(stepDetails[0]);
+        var tableAccord = createAccordionTable(
+          obj.TestStep_Details[list[i]["tc_run_id"]["value"]].steps,
+          i
+        );
+        accordDiv.append(tableAccord[0]);
+        // tcellAccord.append(imgmodaldiv);
+        tcellAccord.append(accordDiv);
+      }
+
+      div.append(table);
+      return div;
+    }
+    function createAccordionTable(list, index) {
+      var div = $("<div/>").addClass("mt-5 mx-5 mb-2");
+
+      var cols = [];
+      for (var i = 0; i < list.length; i++) {
+        for (var k in list[i]) {
+          if (cols.indexOf(k) === -1) {
+            // Push all keys to the array
+            if (!excludeHeader.includes(k)) {
+              cols.push(k);
+            }
+          }
+        }
+      }
+      if (!cols.includes("S.No.")) {
+        cols.unshift("S.No.");
+      }
+
+      var table = document.createElement("table");
+      table.id = "tabAccord" + index;
+      table.className =
+        "table table-borderless table-responsive d-block d-md-table w-100";
+      //  table.style.width="100%";
+      table.style.boxShadow = "0px 4px 8px rgba(0, 71, 136, 0.11)";
+      table.style.borderRadius = "4px";
+      // Create table row tr element of a table
+      var tr = table.insertRow(-1);
+
+      for (var i = 0; i < cols.length; i++) {
+        // Create the table header th element
+        var theader = document.createElement("th");
+        theader.style.backgroundColor =
+          theme[2].substring(0, theme[2].length - 1) + ", 0.1)";
+        theader.innerHTML = cols[i];
+        theader.id = cols[i] + "_tcaccord";
+        if (cols[i] === "STATUS" || cols[i] === "status") {
+          theader.style.width = "130px";
+        }
+        // Append columnName to the table row
+        tr.appendChild(theader);
+      }
+      for (var i = 0; i < list.length; i++) {
+        // Create a new row
+        trow = table.insertRow(-1);
+        trow.className = "accordRow";
+        trow.style.backgroundColor = "#FFFFFF";
+        for (var j = 0; j < cols.length; j++) {
+          var cell = trow.insertCell(-1);
+          cell.setAttribute("class","align-middle setWidth");
+
+          var att = document.createAttribute("data-input");
+          if (cols[j].includes(" ")) {
+            var v = cols[j].replace(" ", "_");
+            att.value = v;
+          } else {
+            att.value = cols[j];
+          }
+          cell.setAttributeNode(att);
+          if(cols[j].toLowerCase()==="substeps"){
+            cell.style.width ="20px";
+            cell.style.verticalAlign="middle";
+            cell.setAttribute("class","text-center");
+            if(list[i][cols[j]]){
+              var divIcon= document.createElement("div");
+            var icon=document.createElement("i");
+            icon.id=i;
+            icon.setAttribute("title","View Substeps");
+            icon.setAttribute("class","fa fa-eye substepIcon");
+            var index=i;
+            console.log(list[index]);
+            console.log(cols[j]);
+            divIcon.addEventListener("click", (event)=>{
+console.log(list);
+createSubsteps(list,event);
+
+trimModal.style.backgroundColor="rgba(0, 0, 0, 0.5)";
+            });
+            divIcon.appendChild(icon);
+            cell.appendChild(divIcon);
+
+          }
+            else{
+              cell.innerHTML ="-";
+
+            }
+          }
+          else if(cols[j].toLowerCase()==='screenshot'){
+            if(list[i][cols[j]]){
+            var image = document.createElement("img");
+image.setAttribute('src',list[i][cols[j]]);
+image.setAttribute('class',"thumb");
+image.setAttribute('image',"Screenshot");
+image.addEventListener("click",function(){
+  var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+});
+
+image.setAttribute('data-toggle','modal');
+image.setAttribute('data-target','#myModal');
+// modal.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+image.setAttribute('id',"myImg");
+cell.appendChild(image);
+
+            }else{
+              var divHandle=document.createElement("div");
+              // divHandle.setAttribute('class','text-center');
+              // divHandle.innerHTML="(blank)";
+              cell.appendChild(divHandle);
+            }
+          }
+          else if (typeof list[i][cols[j]] === "object") {
+            var a = document.createElement("a");
+            a.href = list[i][cols[j]]["href"];
+            a.target = "_blank";
+            a.innerHTML = list[i][cols[j]]["LinkName"];
+            cell.appendChild(a);
+          } else if (cols[j] === "STATUS" || cols[j] === "status") {
+            var cont = document.createElement("div");
+
+            if (list[i][cols[j]] === "PASS") {
+              cont.className = "statusColorPass statusAccord ";
+            } else if (list[i][cols[j]] === "FAIL") {
+              cont.className = "statusColorFail statusAccord";
+            } else if (list[i][cols[j]] === "INFO") {
+              cont.className = "statusColorInfo statusAccord";
+            } else if (list[i][cols[j]] === "WARN") {
+              cont.className = "statusColorWarn statusAccord";
+            } else if (list[i][cols[j]] === "INCOMPLETE") {
+              cont.className = "statusColorIncomplete statusAccord";
+            } else {
+              cont.className = "statusColorOthers statusAccord";
+            }
+            cont.innerText = list[i][cols[j]];
+            cell.appendChild(cont);
+          } else if (cols[j] === "TIME" || cols[j] === "time") {
+            cell.innerHTML = convertIntoDateTime(list[i][cols[j]]);
+          } else if (cols[j] === "S.No.") {
+            cell.innerHTML = i + 1;
+            cell.style.width ="20px";
+
+          } else {
+            if (list[i][cols[j]] === undefined) {
+              list[i][cols[j]] = "-";
+            }
+            cell.append(getTrimData(list[i][cols[j]],cols[j]));
+          }
+        }
+      }
+      div.append(table);
+      return div;
+    }
+
+    function getExecutionDetailsTable(data) {
+      var div = $("<div/>").addClass(" mx-5 mt-5");
+      var exeHeading = $("<span/>")
+        .html("Execution Details")
+        .addClass("tableHeading mb-2")
+        .css("color", theme[0]);
+      $(div).append(exeHeading);
+      var table = $("<table/>")
+        .addClass(
+          "table table-borderless table-responsive w-100 d-block d-md-table"
+        )
+        .css("box-shadow", " 0px 3px 6px rgba(0, 71, 136, 0.05)")
+        .css("border-radius", "4px");
+      var cols = Headers(exeHeaders);
+      var headers = $("<tr>");
+      var content = $("<tr/>");
+      for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+        var val = data[cols[colIndex]];
+        var backOpacity = theme[2].substring(0, theme[2].length - 1) + ", 0.1)";
+        headers
+          .append($("<th/>").html(cols[colIndex]))
+          .css("color", "black")
+          .css("background-color", backOpacity);
+
+        $(table).append(headers);
+      }
+      for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+        var val = data[exeHeaders[cols[colIndex]]];
+        if (val === undefined) {
+          val = "None";
+        }
+        if (cols[colIndex].toUpperCase().includes("TIME")) {
+          val = changeTime(data[exeHeaders[cols[colIndex]]]);
+        }
+        if (cols[colIndex].toUpperCase().includes("DURATION")) {
+          val = getDuration(
+            data[exeHeaders["START_TIME"]],
+            data[exeHeaders["END_TIME"]],
+            colIndex + "_col"
+          )["value"];
+        }
+
+        content.append($("<td/>").html(val).css("background-color", "white"));
+
+        $(table).append(content);
+      }
+
+      div.append(table);
+      return div;
+    }
+
+    function createAccordionMetaDetails(data) {
+      var div = $("<div/>")
+        .addClass("mt-4 mx-5 card p-3")
+        .css("box-shadow", "0px 3px 6px rgba(0, 0, 0, 0.05)")
+        .css("border-radius", "6px")
+        .css("display", "block")
+        .hover(
+          function () {
+            var col = "1px solid " + theme[0];
+            $(this).css("border", col).css("cursor", "pointer");
+          },
+          function () {
+            $(this).css("border", "none");
+          }
+        );
+      var table = $("<table/>").addClass(
+        "table table-borderless table-responsive w-100 d-block d-md-table"
+      );
+      for (var m = 0; m < data.length - 1; m++) {
+        var headers = $("<tr>");
+          headers.addClass("accordRow");
+        var content = $("<tr/>");
+        content.addClass("accordRow");
+        var cols = Headers(data[m]);
+        for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+          var val = data[m][cols[colIndex]];
+
+          headers
+            .append($("<th/>").html(cols[colIndex]))
+            .css("color", theme[0])
+            .css("max-width", "3px");
+
+          $(table).append(headers);
+        }
+
+        for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+          var val = data[m][cols[colIndex]];
+          if (val === undefined) {
+            val = "None";
+          }
+          if (val.type) {
+            content.append($("<td/>").html(changeDate(val)));
+          } else {
+            content.append($("<td/>").html(val));
+          }
+          $(table).append(content);
+        }
+      }
+
+      div.append(table);
+      return div;
+    }
+
+    function getInfraDetailsTable(data) {
+      var div = $("<div/>")
+        .addClass("mt-4 mx-5 card p-3")
+        .css("box-shadow", "0px 3px 6px rgba(0, 0, 0, 0.05)")
+        .css("border-radius", "6px")
+        .css("display", "block")
+        .hover(
+          function () {
+            var col = "1px solid " + theme[0];
+            $(this).css("border", col).css("cursor", "pointer");
+          },
+          function () {
+            $(this).css("border", "none");
+          }
+        );
+
+      var infraHeading = $("<span/>")
+        .html("Infra Details")
+        .addClass("tableHeading mb-2 ml-2");
+      infraHeading.css("color", theme[0]);
+      $(div).append(infraHeading);
+      var table = $("<table/>").addClass(
+        "table table-borderless table-responsive w-100 d-block d-md-table"
+      );
+      var cols = Headers(infraHeaders);
+      var headers = $("<tr>");
+      var content = $("<tr/>");
+      for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+        var val = data[cols[colIndex]];
+
+        headers.append($("<th/>").html(cols[colIndex])).css("color", theme[0]);
+
+        $(table).append(headers);
+      }
+
+      for (var colIndex = 0; colIndex < cols.length; colIndex++) {
+        var val = data[infraHeaders[cols[colIndex]]];
+        if (val === undefined) {
+          val = "None";
+        }
+
+        content.append($("<td/>").html(val));
+
+        $(table).append(content);
+      }
+
+      div.append(table);
+      return div;
+    }
+
+    function createAccordionCards(val, index) {
+      var key, keys = Object.keys(val);
+var n = keys.length;
+var newobj={}
+while (n--) {
+  key = keys[n];
+  newobj[key.toUpperCase()] = val[key];
+}
+  val=newobj;
+      var cards = Object.keys(val);
+      var dummy_card = new Set();
+      dummy_card.add("TOTAL");
+      dummy_card.add("PASS");
+      dummy_card.add("FAIL");
+      cards.forEach((ele) => {
+        dummy_card.add(ele.toUpperCase());
+      });
+      cards = Array.from(dummy_card);
+
+      var div = $("<div/>").addClass("mx-4 mt-4");
+      var flex = $("<div/>").addClass("d-flex flex-wrap justify-content-start");
+      for (var i = 0; i < cards.length; i++) {
+        var card = $("<div/>")
+          .addClass("card mx-4 mt-2")
+          .css("height", "92px")
+          .css("width", "170px")
+          .css("box-shadow", "0px 3px 6px rgba(0, 0, 0, 0.05)")
+          .css("border-radius", "6px")
+          .hover(
+            function () {
+              var col = "1px solid " + theme[0];
+
+              $(this).css("border", col).css("cursor", "pointer");
+
+            },
+            function () {
+              $(this).css("border", "1px solid rgba(0,0,0,.125)");
+            }
+          );
+
+        var cardBody = $("<div/>")
+          .addClass("card-body")
+          .css("align-self", "flex-start");
+        var cardTitle = $("<span/>")
+          .addClass("title-card")
+          .css("color", theme[0]);
+        // if(data[cards[i]]){
+        cardTitle.html(cards[i]);
+        //         }else{
+        // cardTitle.html(0);
+        //         }
+        var cardText = $("<span/>").addClass("text-card");
+        if (val[cards[i]]) {
+
+          card.attr("title","Click to Filter");
+
+
+          cardText.html(val[cards[i]]);
+        } else {
+
+          card.css("background-color", "#EEEEEE");
+          card.hover(function() {
+        $(this).css('cursor','not-allowed');
+    });
+          cardText.html(0);
+        }
+        if (cards[i] === "PASS") {
+          cardText.addClass("passTest");
+        } else if (cards[i] === "FAIL") {
+          cardText.addClass("failTest");
+        } else if (cards[i] === "WARN") {
+          cardText.addClass("warnTest");
+        } else if (cards[i] === "INFO") {
+          cardText.addClass("infoTest");
+        } else if (cards[i] === "INCOMPLETE") {
+          cardText.addClass("incompleteTest");
+        } else if (cards[i] === "TOTAL") {
+          cardText.css("color", theme[0]);
+        } else {
+          cardText.addClass("othersTest");
+        }
+        cardBody.append(cardTitle).append("<br/>").append(cardText);
+        card.append(cardBody);
+
+        flex.append(card);
+        card.click(function (event) {
+          filterTable(
+            event.currentTarget.firstChild.firstChild.innerText,
+            index,
+            event.currentTarget.firstChild.lastChild.innerText
+          );
+        });
+      }
+
+      div.append(flex);
+      return div;
+    }
+    function filterTable(val, index, check) {
+      if (check > 0) {
+        var $filterableRows = $("#tabAccord" + index)
+          .find("tbody")
+          .find("tr")
+          .not(":first");
+        $filterableRows
+          .hide()
+          .filter(function () {
+            return (
+              $(this).filter(function () {
+                var tdText = $(this).find(".statusAccord").text().toLowerCase();
+
+                if (val === "TOTAL") {
+                  val = "";
+                }
+                if (val === undefined) {
+                  val = "";
+                } else {
+                  val = val.toLowerCase();
+                }
+
+                return tdText.includes(val);
+              }).length === $(this).length
+            );
+          })
+          .show();
+      }
+    }
+
+    function getCardDetails(data,type) {
+      var key, keys = Object.keys(data);
+var n = keys.length;
+var newobj={}
+while (n--) {
+  key = keys[n];
+  newobj[key.toUpperCase()] = data[key];
+}
+  data=newobj;
+      var cards = Object.keys(data);
+      var dummy_card = new Set();
+      dummy_card.add("TOTAL");
+      dummy_card.add("PASS");
+      dummy_card.add("FAIL");
+      cards.forEach((ele) => {
+        dummy_card.add(ele.toUpperCase());
+      });
+      cards = Array.from(dummy_card);
+
+      var cardValues = Object.values(data);
+      var div = $("<div/>").addClass("col-12 mx-2 mt-4");
+      var flex = $("<div/>").addClass("d-flex flex-wrap justify-content-start");
+      for (var i = 0; i < cards.length; i++) {
+        var card = $("<div/>")
+          .addClass("card mx-4 mt-2")
+          .css("height", "92px")
+          .css("width", "170px")
+          .css("box-shadow", "0px 3px 6px rgba(0, 0, 0, 0.05)")
+          .css("border-radius", "6px")
+          .hover(
+            function () {
+              var col = "1px solid " + theme[0];
+              $(this).css("border", col);
+              if(type==='testcase'){
+              $(this).css("cursor", "pointer");
+              }
+            },
+            function () {
+
+              $(this).css("border", "1px solid rgba(0,0,0,.125)");
+
+            }
+          );
+
+        var cardBody = $("<div/>").addClass("card-body");
+        var cardTitle = $("<span/>")
+          .addClass("title-card")
+          .css("color", theme[0]);
+        // if(data[cards[i]]){
+        cardTitle.html(cards[i]);
+        //         }else{
+        // cardTitle.html(0);
+        //         }
+        var cardText = $("<span/>").addClass("text-card");
+        if (data[cards[i]]) {
+          if(type==='testcase'){
+          card.attr("title","Click to Filter");
+          }
+          cardText.html(data[cards[i]]);
+        } else {
+          if(type==='testcase'){
+          card.css("background-color", "#EEEEEE");
+          card.hover(function() {
+        $(this).css('cursor','not-allowed');
+    });
+  }
+          cardText.html(0);
+        }
+        if (cards[i] === "PASS") {
+          cardText.addClass("passTest");
+        } else if (cards[i] === "FAIL") {
+          cardText.addClass("failTest");
+        } else if (cards[i] === "WARN") {
+          cardText.addClass("warnTest");
+        } else if (cards[i] === "INFO") {
+          cardText.addClass("infoTest");
+        } else if (cards[i] === "INCOMPLETE") {
+          cardText.addClass("incompleteTest");
+        } else if (cards[i] === "TOTAL") {
+          cardText.css("color", theme[0]);
+        } else {
+          cardText.addClass("othersTest");
+        }
+        cardBody.append(cardTitle).append("<br/>").append(cardText);
+        card.append(cardBody);
+        if(type==='testcase'){
+  card.attr("data-toggle","tooltip");
+        card.attr("data-placement","bottom");
+
+card.click(function(event){
+
+$("#tab").find("tbody").find("tr").not(".accordRow").not(".checkCollapse").not(":first").fadeOut("fast");
+
+statusSearch( event.currentTarget.firstChild.firstChild.innerText,event.currentTarget.firstChild.lastChild.innerText);
+});
+}
+        flex.append(card);
+      }
+      div.append(flex);
+      return div;
+    }
+
+    function changeSerial(val) {
+      var serialobj = {
+        value: val + 1,
+        sortValue: val + 1,
+      };
+      return serialobj;
+    }
+
+    function changeTime(val) {
+      var data = new Date(val);
+      return data.toLocaleString();
+    }
+
+    function getDuration(start, end, index) {
+      var startTime = new Date(start).getTime();
+      var endTime = new Date(end).getTime();
+      var dur = (endTime - startTime) / 1000;
+      var objans = {
+        value: ans,
+        sortValue: dur,
+      };
+      if (dur < 60) {
+        objans.value = dur + " sec(s)";
+      } else if (dur >= 60 && dur < 3600) {
+        var ans = Math.floor(dur / 60) + " min ";
+        if (Math.floor(dur % 60) !== 0) {
+          ans = ans + Math.floor(dur % 60) + " sec(s)";
+        }
+        objans.value = ans;
+      } else if (dur >= 60 && dur < 86400) {
+        var ans = Math.floor(dur / 3600) + " hour ";
+        if (Math.floor((dur % 3600) / 60) !== 0) {
+          ans = ans + Math.floor((dur % 3600) / 60) + " min";
+        }
+        if (Math.floor((dur % 3600) % 60) !== 0) {
+          ans = ans + Math.floor((dur % 3600) % 60) + " sec(s)";
+        }
+
+        objans.value = ans;
+      }
+      if (!isNaN(index)) {
+        obj.Suits_Details.TestCase_Details[index]["DURATION"] = objans;
+      }
+      return objans;
+    }
+
+    function getOptions(val) {
+      var options = new Set();
+      options.add("All");
+      for (var i = 0; i < val.length; i++) {
+        options.add(val[i]["status"]["value"]);
+      }
+      return Array.from(options);
+    }
+
+    function getsort(val) {
+      if (
+        val.target.className === "fa fa-angle-up ml-1" ||
+        val.target.className === "fa fa-angle-down ml-1"
+      ) {
+        if (lastsortHeader === "") {
+          lastsortHeader = val.target.id;
+          sortType = "asc";
+        } else if (val.target.id === lastsortHeader) {
+          if (sortType === "asc") {
+            sortType = "desc";
+          } else {
+            sortType = "asc";
+          }
+          lastsortHeader = val.target.id;
+        } else {
+          sortType = "asc";
+          lastsortHeader = val.target.id;
+        }
+        var tab = [...obj.Suits_Details.TestCase_Details];
+        if (sortType === "asc") {
+          for (var i = 0; i < tab.length; i++) {
+            for (var j = i + 1; j < tab.length; j++) {
+              if (
+                tab[i][val.target.id]["sortValue"] >
+                tab[j][val.target.id]["sortValue"]
+              ) {
+                var swap = tab[i];
+                tab[i] = tab[j];
+                tab[j] = swap;
+              }
+            }
+          }
+        } else {
+          for (var i = 0; i < tab.length; i++) {
+            for (var j = i + 1; j < tab.length; j++) {
+              if (
+                tab[i][val.target.id]["sortValue"] <
+                tab[j][val.target.id]["sortValue"]
+              ) {
+                var swap = tab[i];
+                tab[i] = tab[j];
+                tab[j] = swap;
+              }
+            }
+          }
+        }
+        obj.Suits_Details.TestCase_Details = tab;
+        $("#pills-testcase").children("div")[2].remove();
+        var testcaseDetailsTable = getTestcaseDetailsTable(tab);
+        $("#pills-testcase").append(testcaseDetailsTable);
+        myFunction();
+        var icon = $("<i/>").addClass("fa").css("font-size", "18px");
+        if (sortType === "asc") {
+          icon.addClass("fa-angle-up ml-1").css("vertical-align", "middle");
+        }
+        if (sortType === "desc") {
+          icon.addClass("fa-angle-down ml-1").css("vertical-align", "middle");
+        }
+        icon.attr("id", lastsortHeader);
+        var targetId = "#" + lastsortHeader + "_tc";
+
+        // icon.addEventListener("click",(e)=>{
+        // e.stopPropagation();
+        // });
+        $(targetId).append(icon);
+
+        var $filterableRows = $("#tab").find("tbody").find("tr").not(":first");
+      } else {
+        if (lastsortHeader === "") {
+          lastsortHeader = val.target.innerText;
+          sortType = "asc";
+        } else if (val.target.innerText === lastsortHeader) {
+          if (sortType === "asc") {
+            sortType = "desc";
+          } else {
+            sortType = "asc";
+          }
+          lastsortHeader = val.target.innerText;
+        } else {
+          sortType = "asc";
+          lastsortHeader = val.target.innerText;
+        }
+        var tab = [...obj.Suits_Details.TestCase_Details];
+        if (sortType === "asc") {
+          for (var i = 0; i < tab.length; i++) {
+            for (var j = i + 1; j < tab.length; j++) {
+              if (
+                tab[i][val.target.innerText]["sortValue"] >
+                tab[j][val.target.innerText]["sortValue"]
+              ) {
+                var swap = tab[i];
+                tab[i] = tab[j];
+                tab[j] = swap;
+              }
+            }
+          }
+        } else {
+          for (var i = 0; i < tab.length; i++) {
+            for (var j = i + 1; j < tab.length; j++) {
+              if (
+                tab[i][val.target.innerText]["sortValue"] <
+                tab[j][val.target.innerText]["sortValue"]
+              ) {
+                var swap = tab[i];
+                tab[i] = tab[j];
+                tab[j] = swap;
+              }
+            }
+          }
+        }
+        obj.Suits_Details.TestCase_Details = tab;
+        $("#pills-testcase").children("div")[2].remove();
+        var testcaseDetailsTable = getTestcaseDetailsTable(tab);
+        $("#pills-testcase").append(testcaseDetailsTable);
+        myFunction();
+        var icon = $("<i/>").addClass("fa").css("font-size", "18px");
+        if (sortType === "asc") {
+          icon.addClass("fa-angle-up ml-1").css("vertical-align", "middle");
+        }
+        if (sortType === "desc") {
+          icon.addClass("fa-angle-down ml-1").css("vertical-align", "middle");
+        }
+        icon.attr("id", lastsortHeader);
+        var targetId = "#" + lastsortHeader + "_tc";
+
+        // icon.addEventListener("click",(e)=>{
+        // e.stopPropagation();
+        // });
+        $(targetId).append(icon);
+
+        var $filterableRows = $("#tab").find("tbody").find("tr").not(":first");
+      }
+    }
+
+    function clickFunc(event) {
+      event.stopPropagation();
+    }
+    function Headers(list) {
+      var columns = [];
+      row = list;
+      for (var k in row) {
+        if ($.inArray(k, columns) == -1) {
+          columns.push(k);
+        }
+      }
+      return columns;
+    }
+
+
+    function showFilterCards(val) {
+      if (val === "show") {
+        $("#filtercard").css("display", "block");
+      } else {
+        $("#filtercard").css("display", "none");
+      }
+    }
+
+    function showFilter(val) {
+      if (val !== "overview") {
+        $("#filters").css("display", "block");
+      } else {
+        $("#filters").css("display", "none");
+      }
+    }
+
+    function myFunction() {
+      var inputs = $(".search-key");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].id === "status") {
+          inputs[i].value = "All";
+        } else {
+          inputs[i].value = "";
+        }
+      }
+
+      var $filterableRows = $("#tab tbody tr");
+      $filterableRows.show();
+    }
+
+    function openDialog() {
+      $("a[name=Test]").on("click", function (e) {
+        e.preventDefault();
+        $("#modal").load(this.href).dialog({ modal: true });
+      });
+    }
+
+    function changeDate(val) {
+      var temp = val.type.toLowerCase();
+      var d = new Date(val.value);
+      if (temp === "date") {
+        return d.toLocaleDateString();
+      } else if (temp === "time") {
+        return d.toLocaleTimeString();
+      } else if (temp === "datetime") {
+        return d.toLocaleString();
+      }
+    }
+
+    function convertIntoDateTime(value) {
+      var date = new Date(value);
+      return date.toLocaleString();
+    }
+    function closeModal(id){
+      var modal = document.getElementById(id);
+      document.getElementById("trimModalcontent").innerHTML="";
+      document.getElementById("trimModaltitle").innerHTML="";
+      modal.style.display = "none";
+
+    }
+    function getTrimData(data,column){
+      var div = document.createElement("div");
+      var span = document.createElement("span");
+      var button=document.createElement("button");
+      button.innerHTML = "See More";
+      button.addEventListener("click", function(){
+var trimModal= document.getElementById("trimModal");
+trimModal.style.display="block";
+var trimModalcontent=document.getElementById("trimModalcontent");
+trimModalcontent.innerHTML=data;
+var trimModaltitle=document.getElementById("trimModaltitle");
+trimModaltitle.innerHTML= column.toUpperCase();
+trimModal.style.backgroundColor="rgba(0, 0, 0, 0.5)";
+
+      });
+      button.setAttribute("class","ml-2 btn btn-link");
+      if(data.length>150){
+      span.innerHTML = data.slice(0,150) + "...";
+      span.appendChild(button);
+      }else{
+        span.innerHTML = data;
+      }
+      div.appendChild(span);
+
+return div;
+    }
+
+
+
+    function createSubsteps(val,event){
+      var modal= document.getElementById("trimModal");
+modal.style.display = "block";
+var trimModaltitle=document.getElementById("trimModaltitle");
+trimModaltitle.innerHTML= "SUBSTEPS";
+var trimModalcontent=document.getElementById("trimModalcontent");
+var list=val[parseInt(event.target.id)]['subSteps'];
+var cols=[];
+for (var i = 0; i < list.length; i++) {
+        for (var k in list[i]) {
+          if (cols.indexOf(k) === -1) {
+            // Push all keys to the array
+
+              cols.push(k);
+          }
+        }
+      }
+
+
+
+      var table = document.createElement("table");
+      table.className =
+        "table table-borderless d-block d-md-table text-center";
+      table.style.boxShadow = "0px 4px 8px rgba(0, 71, 136, 0.11)";
+      table.style.borderRadius = "4px";
+      // Create table row tr element of a table
+      var tr = table.insertRow(-1);
+      for (var i = 0; i < cols.length; i++) {
+        // Create the table header th element
+        var theader = document.createElement("th");
+        theader.style.backgroundColor =
+          theme[2].substring(0, theme[2].length - 1) + ", 0.1)";
+        theader.innerHTML = cols[i];
+
+        // Append columnName to the table row
+        tr.appendChild(theader);
+      }
+
+
+      for (var i = 0; i < list.length; i++) {
+        // Create a new row
+        trow = table.insertRow(-1);
+
+        trow.style.backgroundColor = "#FFFFFF";
+        for (var j = 0; j < cols.length; j++) {
+          var cell = trow.insertCell(-1);
+          cell.setAttribute("class","align-middle setWidth");
+          if (cols[j] === "status") {
+              // cell.innerHTML = list[i][cols[j]];
+              var link = document.createElement("div");
+              link.className = "btn-sm";
+              link.innerHTML = list[i][cols[j]];
+              cell.appendChild(link);
+              if (list[i][cols[j]] === "PASS") {
+                link.className = "statusColorPass";
+              } else if (list[i][cols[j]] === "FAIL") {
+                link.className = "statusColorFail";
+              } else if (list[i][cols[j]] === "INFO") {
+                link.className = "statusColorInfo";
+              } else if (list[i][cols[j]] === "WARN") {
+                link.className = "statusColorWarn";
+              } else if (list[i][cols[j]] === "INCOMPLETE") {
+                link.className = "statusColorIncomplete";
+              } else {
+                link.className = "statusColorOthers";
+              }
+            }else{
+          cell.innerHTML = list[i][cols[j]];
+            }
+        }
+      }
+
+trimModalcontent.append(table);
+      console.log(cols);
+    }
+
+
+    function statusSearch(val,count){
+      if(count>0){
+       var $filterableRows = $("#tab")
+          .find("tbody")
+          .find(".checkCollapse")
+
+        $filterableRows
+          .hide()
+          .filter(function () {
+            return (
+              $(this).filter(function () {
+                var tdText = $(this).find(".status").text().toLowerCase();
+                console.log(tdText);
+
+
+                if (val === "TOTAL") {
+                  val = "";
+                }
+                if (val === undefined) {
+                  val = "";
+                } else {
+                  val = val.toLowerCase();
+                }
+
+                return tdText.includes(val);
+              }).length === $(this).length
+            );
+          })
+          .show();
+        }
+    }
+
+
+</script>
+</html>
