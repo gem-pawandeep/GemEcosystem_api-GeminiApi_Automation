@@ -2,6 +2,7 @@ package gem.qa.GemEcosystem_api;
 
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.gemini.apitest.ProjectSampleJson;
+import com.gemini.featureFrameWork.GemJarUtils;
 import com.gemini.generic.ProjectProperties;
 import com.gemini.generic.QuanticAPIBase;
 import com.gemini.apitest.ApiClientConnect;
@@ -370,8 +371,7 @@ public class posttoken extends QuanticAPIBase {
         //headers
 
         //  System.out.println(bridgeToken);
-        String username = (String) projectProperty.get("username");
-        //String bridgeToken = (String) projectProperty.get("bridgeToken");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         // \ System.out.println(bridgeToken);
         headers.put("username", username);
@@ -436,8 +436,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -504,8 +503,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject payload = ProjectSampleJson.getSampleData("psuite2_sampleJson").getAsJsonObject();
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -567,8 +565,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject payload = ProjectSampleJson.getSampleData("psuite2_sampleJson").getAsJsonObject();
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
         //headers
-        //  String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt + "sssss");
@@ -627,8 +624,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject payload = ProjectSampleJson.getSampleData("psuite2_sampleJson").getAsJsonObject();
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
         //headers
-        //  String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt + "sssss");
@@ -696,8 +692,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        //  String bridgeToken= (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+            String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -757,8 +752,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        //   String bridgeToken= (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -830,8 +824,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        //   String bridgeToken= (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+            String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -903,8 +896,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        //   String bridgeToken= (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -981,8 +973,7 @@ public class posttoken extends QuanticAPIBase {
         JsonObject res = null;
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+        String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1043,8 +1034,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1114,8 +1104,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Payload ", String.valueOf(payload), STATUS.INFO);
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1188,8 +1177,7 @@ public class posttoken extends QuanticAPIBase {
            JsonObject res = null;
 
            //headers
-           String bridgeToken = (String) projectProperty.get("bridgeToken");
-           String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
            Map<String, String> headers = new HashMap<>();
            headers.put("username", username);
            headers.put("bridgeToken", bt);
@@ -1252,8 +1240,7 @@ public class posttoken extends QuanticAPIBase {
            JsonObject res = null;
 
            //headers
-           String bridgeToken = (String) projectProperty.get("bridgeToken");
-           String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
            Map<String, String> headers = new HashMap<>();
            headers.put("username", username);
            headers.put("bridgeToken", bt + "kkll");
@@ -1316,8 +1303,7 @@ public class posttoken extends QuanticAPIBase {
             JsonObject res = null;
 
             //headers
-            String bridgeToken = (String) projectProperty.get("bridgeToken");
-            String username = (String) projectProperty.get("username");
+            String username = GemJarUtils.getGemJarConfigData("username").getAsString();
             Map<String, String> headers = new HashMap<>();
             headers.put("username", username);
             headers.put("bridgeToken", bt + "kkll");
@@ -1388,8 +1374,7 @@ public class posttoken extends QuanticAPIBase {
 
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+            String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1452,8 +1437,7 @@ public class posttoken extends QuanticAPIBase {
         GemTestReporter.addTestStep("Url for Put Request", url, STATUS.INFO);
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1524,8 +1508,7 @@ public class posttoken extends QuanticAPIBase {
 
 
         //headers
-        String bridgeToken = (String) projectProperty.get("bridgeToken");
-        String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
         Map<String, String> headers = new HashMap<>();
         headers.put("username", username);
         headers.put("bridgeToken", bt);
@@ -1595,8 +1578,7 @@ public class posttoken extends QuanticAPIBase {
 
 
            //headers
-           String bridgeToken = (String) projectProperty.get("bridgeToken");
-           String username = (String) projectProperty.get("username");
+           String username = GemJarUtils.getGemJarConfigData("username").getAsString();
            Map<String, String> headers = new HashMap<>();
            headers.put("username", username);
            headers.put("bridgeToken", bt + "ddddd");
@@ -1669,8 +1651,7 @@ public class posttoken extends QuanticAPIBase {
 
 
             //headers
-            String bridgeToken = (String) projectProperty.get("bridgeToken");
-            String username = (String) projectProperty.get("username");
+            String username = GemJarUtils.getGemJarConfigData("username").getAsString();
             Map<String, String> headers = new HashMap<>();
             headers.put("username", username);
             headers.put("bridgeToken", bt + "ddddd");

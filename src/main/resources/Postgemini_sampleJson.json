@@ -6,7 +6,7 @@
 
   "lastName":"user",
 
-  "email":"#random-[2,9.5,-4]##random-[2,9.5,-4]#@geminisolutions.com",
+  "email":"new_user_#epoch#@geminisolutions.com",
 
   "password":"abcd",
 
