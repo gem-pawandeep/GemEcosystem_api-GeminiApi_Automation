@@ -29,7 +29,6 @@ public class Getcompany extends QuanticAPIBase{
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Company API ", STATUS.INFO);
 
         String url = ProjectApiUrl.getUrl("Getc");
-
         GemTestReporter.addTestStep("Url for Get Request", url, STATUS.INFO);
 
         JsonObject res = null;
