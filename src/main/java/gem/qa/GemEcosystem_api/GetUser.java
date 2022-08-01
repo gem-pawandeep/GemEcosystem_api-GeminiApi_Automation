@@ -1,13 +1,13 @@
 package gem.qa.GemEcosystem_api;
 import com.gemini.apitest.ApiHealthCheckUtils;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -19,16 +19,12 @@ import org.testng.annotations.Test;
 
 import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
-public class GetUser extends QuanticAPIBase {
-
-   /* @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
-    public void Putgem_tcrunidnotpresentindatabase(JsonObject inputData) {
+public class GetUser extends GemjarAPIBase {
 
 
-    }*/
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Validate_Username(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get API ", STATUS.INFO);
 
@@ -72,7 +68,7 @@ public class GetUser extends QuanticAPIBase {
     }
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Validate_Username_username_doesnotexists(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get API when the username doesnot exists", STATUS.INFO);
 

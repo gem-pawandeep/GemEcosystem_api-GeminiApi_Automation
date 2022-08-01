@@ -1,6 +1,6 @@
 package gem.qa.GemEcosystem_api;
 
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.generic.GemjarAPIBase;
 import io.cucumber.java.ca.Quan;
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.google.gson.JsonArray;
@@ -9,8 +9,8 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -22,9 +22,9 @@ import org.testng.annotations.Test;
 import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
 
-public class Postusers extends QuanticAPIBase {
+public class Postusers extends GemjarAPIBase {
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Create_New_User(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Post function by creating new user ", STATUS.INFO);
@@ -80,7 +80,7 @@ if (res==null)
 
     }
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Create_New_User_username_alreadyexists(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Post function by creating new user when the username already exists ", STATUS.INFO);
@@ -137,7 +137,7 @@ else if (status==201)
     }
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Create_New_User_compulsory_field_not_present(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Post function by creating new user when the compulsory fields are not present", STATUS.INFO);
@@ -201,7 +201,7 @@ else if (status==201)
 
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Create_New_User_bygiving_empty_body(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Post function by creating new user when the body is empty", STATUS.INFO);
@@ -266,7 +266,7 @@ else if (status==201)
 
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Create_New_User_bygiving_wrong_email(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Post function by creating new user when the Email format is not correct", STATUS.INFO);

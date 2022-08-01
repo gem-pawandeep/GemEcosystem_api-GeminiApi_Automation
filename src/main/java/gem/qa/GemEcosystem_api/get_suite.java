@@ -1,6 +1,8 @@
 package gem.qa.GemEcosystem_api;
 
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
+
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -8,8 +10,8 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
+
+import com.gemini.generic.GemjarAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -22,8 +24,8 @@ import org.testng.annotations.Test;
 import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
 
-public class get_suite extends QuanticAPIBase {
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+public class get_suite extends GemjarAPIBase {
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Get_data_of_suites(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Suite API ", STATUS.INFO);
 
@@ -65,7 +67,7 @@ public class get_suite extends QuanticAPIBase {
     }
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Get_data_of_suite_srunidnotpresent(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Suite API when S-run-id not present ", STATUS.INFO);
 

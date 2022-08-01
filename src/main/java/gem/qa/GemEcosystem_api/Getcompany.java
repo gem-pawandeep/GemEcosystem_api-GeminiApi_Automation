@@ -1,6 +1,8 @@
 package gem.qa.GemEcosystem_api;
 
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
+
 import io.cucumber.java.ca.Quan;
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.google.gson.JsonArray;
@@ -9,8 +11,6 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -23,8 +23,8 @@ import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
 
 
-public class Getcompany extends QuanticAPIBase{
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+public class Getcompany extends GemjarAPIBase{
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Getcompany(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Company API ", STATUS.INFO);
 

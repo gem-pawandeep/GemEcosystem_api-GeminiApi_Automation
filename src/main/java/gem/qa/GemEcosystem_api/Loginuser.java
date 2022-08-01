@@ -1,6 +1,8 @@
 package gem.qa.GemEcosystem_api;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
 import com.gemini.generic.ProjectProperties;
-import com.gemini.generic.QuanticAPIBase;
+
 import io.cucumber.java.ca.Quan;
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.google.gson.JsonArray;
@@ -9,8 +11,6 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -23,12 +23,12 @@ import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
 
 
-public class Loginuser extends QuanticAPIBase {
+public class Loginuser extends GemjarAPIBase {
 
 
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Loginuser(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Login User Api  ", STATUS.INFO);
@@ -50,12 +50,12 @@ public class Loginuser extends QuanticAPIBase {
         } catch (Exception e) {
             GemTestReporter.addTestStep(" Post Request Verification ", "Post Request Did not Executed Successfully", STATUS.FAIL);
         }
-        System.out.println(res);
+      //  System.out.println(res);
         JsonObject Boddy= (JsonObject) res.get("responseBody");
-        System.out.println(Boddy);
+       // System.out.println(Boddy);
         JsonObject to= (JsonObject) Boddy.get("data");
         String tokenss= String.valueOf(to.get("token"));
-        System.out.println(tokenss);
+       // System.out.println(tokenss);
 
         ProjectProperties.setProperty("JMT",tokenss);
         int status = res.get("status").getAsInt();
@@ -86,7 +86,7 @@ public class Loginuser extends QuanticAPIBase {
         }
 
     }
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Loginuser_wrongcredentials(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Login User Api by wrong credentials ", STATUS.INFO);
@@ -131,7 +131,7 @@ public class Loginuser extends QuanticAPIBase {
     }
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Loginuser_fieldsnotpresent(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Login User Api when some fields are not present ", STATUS.INFO);
@@ -195,7 +195,7 @@ public class Loginuser extends QuanticAPIBase {
 
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Loginuser_empty_body(JsonObject inputData) {
 
         GemTestReporter.addTestStep("Test Case", "Test to check the Login User Api when body is empty ", STATUS.INFO);

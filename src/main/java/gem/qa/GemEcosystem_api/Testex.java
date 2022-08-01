@@ -1,6 +1,6 @@
 package gem.qa.GemEcosystem_api;
 
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.generic.GemjarAPIBase;
 import com.gemini.apitest.ApiHealthCheckUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -8,8 +8,8 @@ import com.gemini.apitest.ApiClientConnect;
 import com.gemini.apitest.ProjectApiUrl;
 import com.gemini.apitest.ProjectSampleJson;
 
-import com.gemini.dataProvider.QuanticDataProvider;
-import com.gemini.generic.QuanticAPIBase;
+import com.gemini.dataProvider.GemjarDataProvider;
+import com.gemini.generic.GemjarAPIBase;
 import com.gemini.quartzReporting.GemTestReporter;
 import com.gemini.quartzReporting.STATUS;
 import com.google.gson.JsonObject;
@@ -22,9 +22,9 @@ import org.testng.annotations.Test;
 import com.google.gson.JsonObject;
 import org.testng.annotations.Test;
 
-public class Testex extends QuanticAPIBase {
+public class Testex extends GemjarAPIBase {
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Get_data_of_test_case(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Test Exe API ", STATUS.INFO);
 
@@ -66,7 +66,7 @@ public class Testex extends QuanticAPIBase {
     }
 
 
-    @Test(dataProvider = "QuanticDataProvider", dataProviderClass = QuanticDataProvider.class)
+    @Test(dataProvider = "GemjarDataProvider", dataProviderClass = GemjarDataProvider.class)
     public void Get_data_of_test_case_tcrunidnotvalid(JsonObject inputData) {
         GemTestReporter.addTestStep("Test Case", "Test to check the Get Test Exe API when tc run id is not valid ", STATUS.INFO);
 
